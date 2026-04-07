@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
@@ -41,6 +41,7 @@ export function HomePage() {
       <main>
         <PageHero
           eyebrow="Portal financeiro premium"
+          variant="home"
           title="Clareza financeira para decidir melhor em cada etapa da sua jornada."
           subtitle="O Cote Juros combina comparadores, ferramentas, diagnostico e inteligencia aplicada para transformar dados financeiros em decisoes praticas."
           actions={[
@@ -53,6 +54,40 @@ export function HomePage() {
             },
             { label: 'Explorar comparadores', href: '/comparadores', tone: 'ghost' }
           ]}
+          panel={
+            <div className="hero-dashboard-card">
+              <div className="hero-dashboard-header">
+                <div>
+                  <p className="hero-dashboard-label">Finance Snapshot</p>
+                  <h3>Camada premium de contexto financeiro</h3>
+                </div>
+                <span className="hero-dashboard-pill">Finance AI</span>
+              </div>
+              <div className="hero-dashboard-list">
+                <div>
+                  <span>Comparadores ativos</span>
+                  <strong>38</strong>
+                </div>
+                <div>
+                  <span>Simulacoes guiadas</span>
+                  <strong>12</strong>
+                </div>
+                <div>
+                  <span>Economia potencial</span>
+                  <strong>R$ 3.420</strong>
+                </div>
+              </div>
+              <div className="hero-dashboard-score">
+                <div className="hero-dashboard-score-head">
+                  <span>Score de saude</span>
+                  <strong>82/100</strong>
+                </div>
+                <div className="bar">
+                  <span style={{ width: '82%' }} />
+                </div>
+              </div>
+            </div>
+          }
         />
 
         <section className="section-space section-muted">

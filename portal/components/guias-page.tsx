@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
@@ -9,7 +9,7 @@ const guideGroups = [
   {
     title: 'Credito',
     items: [
-      { name: 'Guia de comparacao de cartoes', href: '/cartoes-de-credito' },
+      { name: 'Guia de comparacao de cartoes', href: '/cartoes' },
       { name: 'Guia de emprestimo responsavel', href: '/emprestimos' }
     ]
   },

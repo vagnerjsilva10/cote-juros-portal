@@ -1,5 +1,8 @@
 ﻿import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { Inter, Manrope } from 'next/font/google';
+
+import { PageViewTracker } from '@/components/analytics/page-view-tracker';
 
 import './globals.css';
 
@@ -26,7 +29,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} ${manrope.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${manrope.variable}`}>
+        <Suspense fallback={null}>
+          <PageViewTracker />
+        </Suspense>
+        {children}
+      </body>
     </html>
   );
 }

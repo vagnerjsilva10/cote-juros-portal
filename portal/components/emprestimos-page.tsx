@@ -1,99 +1,39 @@
-import Link from 'next/link';
+import { getFeaturedOffers, getOffersByType } from '@/lib/offers';
 
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { CTASection } from '@/components/ui/cta-section';
-import { PageHero } from '@/components/ui/page-hero';
-import { SectionHeader } from '@/components/ui/section-header';
-import { coteFinanceAppUrl } from '@/data/homepage';
+import { ComparatorPageTemplate } from '@/components/offers/comparator-page-template';
 
-const rows = [
-  { institution: 'Banco Alpha Prime', rate: '1,49% a.m.', term: '48 meses', approval: '92%' },
-  { institution: 'Banco Horizonte', rate: '1,67% a.m.', term: '60 meses', approval: '88%' },
-  { institution: 'Nexo Finance', rate: '2,14% a.m.', term: '72 meses', approval: '81%' }
-];
+export async function EmprestimosPage() {
+  const offers = await getOffersByType('loan', { featured: true });
+  const recommendedOffers = await getFeaturedOffers('loan');
 
-export function EmprestimosPage() {
   return (
     <>
       <SiteHeader activePath="/comparadores" />
       <main>
-        <PageHero
+        <ComparatorPageTemplate
           eyebrow="Comparador de emprestimos"
-          title="Credito pessoal com comparacao de custo real, prazo e risco."
-          subtitle="Entenda qual linha faz sentido para seu objetivo sem comprometer sua estabilidade financeira."
-          actions={[
-            { label: 'Voltar ao hub de comparadores', href: '/comparadores' },
-            { label: 'Abrir comparador interativo', href: '/comparador-interativo', tone: 'secondary' }
+          title="Emprestimos preparados para operacao com tracking, recomendacao e paginas SEO."
+          subtitle="Use comparacao por taxa, prazo e elegibilidade para transformar trafego em lead, clique rastreado e recomendacao contextual."
+          sourcePage="emprestimos"
+          offers={offers}
+          filters={[
+            { label: 'Melhores emprestimos', href: '/melhores-emprestimos', active: true },
+            { label: 'Para negativado', href: '/emprestimo-para-negativado' },
+            { label: 'Diagnostico financeiro', href: '/diagnostico-financeiro' }
           ]}
-        />
-
-        <section className="section-space section-muted">
-          <div className="container">
-            <SectionHeader title="Instituicoes em destaque" description="Comparacao por taxa mensal, prazo maximo e chance estimada de aprovacao." />
-            <div className="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Instituicao</th>
-                    <th>Taxa</th>
-                    <th>Prazo</th>
-                    <th>Aprovacao</th>
-                    <th />
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((row) => (
-                    <tr key={row.institution}>
-                      <td>{row.institution}</td>
-                      <td>{row.rate}</td>
-                      <td>{row.term}</td>
-                      <td>{row.approval}</td>
-                      <td>
-                        <Link className="card-link" href="/comparador-interativo">
-                          Ver detalhes
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-space">
-          <div className="container two-col-grid">
-            <article className="panel-card">
-              <h2>Como escolher emprestimo com criterio</h2>
-              <ul>
-                <li>Compare CET e nao apenas taxa nominal.</li>
-                <li>Evite prazo longo sem necessidade de caixa.</li>
-                <li>Reserve margem no orcamento para imprevistos.</li>
-              </ul>
-            </article>
-            <article className="panel-card">
-              <h2>Contexto de risco</h2>
-              <p>
-                Emprestimo e ferramenta de alavancagem. Quando bem usado, protege liquidez; quando
-                mal dimensionado, pressiona caixa e aumenta inadimplencia.
-              </p>
-              <Link className="btn btn-secondary" href="/editorial">
-                Ler conteudo de apoio
-              </Link>
-            </article>
-          </div>
-        </section>
-
-        <CTASection
-          title="Quer reduzir custo das suas dividas atuais?"
-          description="O diagnostico identifica onde priorizar renegociacao e quais linhas podem substituir passivos caros."
-          primaryLabel="Iniciar diagnostico"
-          primaryHref="/diagnostico-financeiro"
-          secondaryLabel="Abrir Cote Finance AI"
-          secondaryHref={coteFinanceAppUrl}
-          secondaryExternal
-          dark
+          explanation={{
+            title: 'O que avaliar antes de clicar em uma oferta de credito',
+            points: [
+              'Taxa nominal so faz sentido junto com CET, prazo e probabilidade de aprovacao.',
+              'A pagina de origem do clique fica registrada para analisar performance por SEO e comparador.',
+              'Regras de recomendacao ajudam a priorizar ofertas para reorganizacao ou liquidez.'
+            ]
+          }}
+          recommendationTitle="Emprestimos indicados para reorganizacao"
+          recommendationRationale="Estas ofertas foram priorizadas por velocidade de contratacao, custo e aderencia a perfis que buscam reorganizacao financeira."
+          recommendationOffers={recommendedOffers.slice(0, 3)}
         />
       </main>
       <SiteFooter />

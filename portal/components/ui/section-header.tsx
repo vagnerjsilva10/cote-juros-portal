@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 type SectionHeaderProps = {
   eyebrow?: string;
@@ -19,7 +19,7 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <header className="section-header">
-      <div>
+      <div className="section-copy">
         {eyebrow ? <p className="section-eyebrow">{eyebrow}</p> : null}
         <h2>{title}</h2>
         {description ? <p className="section-description">{description}</p> : null}

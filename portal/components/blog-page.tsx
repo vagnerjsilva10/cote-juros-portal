@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
@@ -39,10 +39,10 @@ const posts = [
   },
   {
     category: 'Cartoes',
-    title: 'Cashback ou milhas: como escolher sem viés de marketing',
+    title: 'Cashback ou milhas: como escolher sem vies de marketing',
     excerpt: 'Comparacao objetiva para decidir pelo retorno que faz sentido no seu uso.',
     readTime: '5 min',
-    href: '/cartoes-de-credito'
+    href: '/cartoes'
   },
   {
     category: 'Planejamento',

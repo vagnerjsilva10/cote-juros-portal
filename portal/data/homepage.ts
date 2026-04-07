@@ -1,4 +1,4 @@
-﻿export type NavItem = {
+export type NavItem = {
   label: string;
   href: string;
   external?: boolean;
@@ -91,7 +91,7 @@ export const homepageCategories: CategoryCard[] = [
   {
     title: 'Cartoes de credito',
     description: 'Rankings por perfil, analise de anuidade, cashback e pontos.',
-    href: '/cartoes-de-credito',
+    href: '/cartoes',
     icon: 'credit_card'
   },
   {
@@ -118,7 +118,7 @@ export const comparatorGroups: ComparatorGroup[] = [
   {
     title: 'Melhores cartoes',
     description: 'Selecao com melhor equilibrio entre beneficio recorrente e custo anual.',
-    href: '/cartoes-de-credito',
+    href: '/cartoes',
     cta: 'Ver comparador de cartoes',
     items: [
       { name: 'Infinite Rewards Elite', detail: 'Cashback ate 3% + salas VIP', signal: 'Alto valor' },
@@ -128,7 +128,7 @@ export const comparatorGroups: ComparatorGroup[] = [
   {
     title: 'Cartoes sem anuidade',
     description: 'Produtos para rotina de gastos com controle de custo fixo mensal.',
-    href: '/cartoes-de-credito',
+    href: '/cartoes',
     cta: 'Ver opcoes sem anuidade',
     items: [
       { name: 'Neo Digital Zero', detail: 'Anuidade R$ 0 e app completo', signal: 'R$ 0' },

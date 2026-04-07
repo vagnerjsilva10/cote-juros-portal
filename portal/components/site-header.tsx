@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 import { navItems } from '@/data/homepage';
 
@@ -12,10 +12,18 @@ function isActive(activePath: string | undefined, href: string) {
   return activePath === href || activePath.startsWith(`${href}/`);
 }
 
-function NavigationLinks({ activePath, mobile }: { activePath?: string; mobile?: boolean }) {
+function NavigationLinks({
+  items,
+  activePath,
+  mobile
+}: {
+  items: typeof navItems;
+  activePath?: string;
+  mobile?: boolean;
+}) {
   return (
     <>
-      {navItems.map((item) => {
+      {items.map((item) => {
         const active = isActive(activePath, item.href);
         const className = [
           'nav-link',
@@ -52,6 +60,9 @@ function NavigationLinks({ activePath, mobile }: { activePath?: string; mobile?:
 }
 
 export function SiteHeader({ activePath = '/' }: SiteHeaderProps) {
+  const primaryItems = navItems.filter((item) => !item.highlight);
+  const highlightedItem = navItems.find((item) => item.highlight);
+
   return (
     <header className="site-header">
       <div className="container nav-wrap">
@@ -60,19 +71,32 @@ export function SiteHeader({ activePath = '/' }: SiteHeaderProps) {
         </Link>
 
         <nav className="desktop-nav" aria-label="Navegacao principal">
-          <NavigationLinks activePath={activePath} />
+          <NavigationLinks items={primaryItems} activePath={activePath} />
         </nav>
 
-        <details className="mobile-nav-wrap">
-          <summary aria-label="Abrir menu principal">
-            <span />
-            <span />
-            <span />
-          </summary>
-          <nav className="mobile-nav" aria-label="Navegacao principal mobile">
-            <NavigationLinks activePath={activePath} mobile />
-          </nav>
-        </details>
+        <div className="header-actions">
+          {highlightedItem ? (
+            <a
+              href={highlightedItem.href}
+              target="_blank"
+              rel="noreferrer"
+              className="nav-link nav-link-highlight nav-link-action"
+            >
+              {highlightedItem.label}
+            </a>
+          ) : null}
+
+          <details className="mobile-nav-wrap">
+            <summary aria-label="Abrir menu principal">
+              <span />
+              <span />
+              <span />
+            </summary>
+            <nav className="mobile-nav" aria-label="Navegacao principal mobile">
+              <NavigationLinks items={navItems} activePath={activePath} mobile />
+            </nav>
+          </details>
+        </div>
       </div>
     </header>
   );

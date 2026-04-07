@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 import { Icon } from '@/components/icon';
 
@@ -74,8 +74,10 @@ export function ComparisonCard({
 }) {
   return (
     <article className="comparison-card">
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <div className="comparison-card-head">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
       <ul className="comparison-list">
         {items.map((item) => (
           <li key={`${title}-${item.name}`}>
@@ -87,9 +89,11 @@ export function ComparisonCard({
           </li>
         ))}
       </ul>
-      <Link className="card-link" href={href}>
-        {ctaLabel}
-      </Link>
+      <div className="comparison-card-footer">
+        <Link className="card-link" href={href}>
+          {ctaLabel}
+        </Link>
+      </div>
     </article>
   );
 }
@@ -107,7 +111,9 @@ export function ToolCard({
 }) {
   return (
     <article className="tool-card">
-      <span className="tool-chip">{category}</span>
+      <div className="tool-card-top">
+        <span className="tool-chip">{category}</span>
+      </div>
       <h3>{title}</h3>
       <p>{description}</p>
       <Link className="card-link" href={href}>
@@ -132,10 +138,13 @@ export function EditorialCard({
 }) {
   return (
     <Link className="editorial-card" href={href}>
-      <span className="editorial-tag">{category}</span>
+      <div className="editorial-card-top">
+        <span className="editorial-tag">{category}</span>
+        <span className="editorial-meta">{readTime}</span>
+      </div>
       <h3>{title}</h3>
       <p>{excerpt}</p>
-      <strong>{readTime}</strong>
+      <span className="card-link">Ler analise</span>
     </Link>
   );
 }

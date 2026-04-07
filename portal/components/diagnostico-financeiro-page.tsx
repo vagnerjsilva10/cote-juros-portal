@@ -1,51 +1,38 @@
-import Link from 'next/link';
+import type { DiagnosisInput, RecommendationResult } from '@/lib/monetization/types';
 
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
+import { RecommendationBlock } from '@/components/offers/recommendation-block';
 import { CTASection } from '@/components/ui/cta-section';
 import { PageHero } from '@/components/ui/page-hero';
 import { SectionHeader } from '@/components/ui/section-header';
 import { coteFinanceAppUrl } from '@/data/homepage';
 
-const diagnosisScope = [
-  'Renda e distribuicao de gastos.',
-  'Dividas com maior impacto no custo mensal.',
-  'Estrategia de investimento e liquidez.',
-  'Oportunidades de economia e reorganizacao.'
-];
+const defaultInput: DiagnosisInput = {
+  primaryGoal: 'save',
+  creditScoreBand: 'mid',
+  incomeBand: 'mid',
+  debtLevel: 'mid',
+  wantsNoAnnualFee: true
+};
 
-const audience = [
-  'Pessoas com renda estavel que querem tomar decisoes com menos risco.',
-  'Familias buscando organizar despesas, dividas e metas de medio prazo.',
-  'Usuarios em fase de renegociacao de credito ou troca de produto financeiro.'
-];
-
-const steps = [
-  {
-    step: '1. Responder perfil',
-    description: 'Voce informa objetivos, tolerancia a risco e contexto atual.'
-  },
-  {
-    step: '2. Mapear financas',
-    description: 'Analisamos renda, gastos, dividas e estrutura de patrimonio.'
-  },
-  {
-    step: '3. Receber direcao',
-    description: 'Entregamos plano com prioridades e proximas acoes recomendadas.'
-  }
-];
-
-export function DiagnosticoFinanceiroPage() {
+export function DiagnosticoFinanceiroPage({
+  recommendation,
+  input = defaultInput
+}: {
+  recommendation?: RecommendationResult | null;
+  input?: DiagnosisInput;
+}) {
   return (
     <>
       <SiteHeader activePath="/diagnostico-financeiro" />
       <main>
         <PageHero
           eyebrow="Diagnostico Financeiro"
-          title="Seu ponto de partida para uma estrategia financeira consistente."
-          subtitle="O diagnostico financeiro do Cote Juros combina analise tecnica e linguagem clara para transformar dados pessoais em direcao pratica."
+          title="Diagnostico com recomendacao de ofertas por regra de negocio."
+          subtitle="A jornada agora classifica perfil, cruza regras e devolve produtos sugeridos com CTA rastreado para a camada comercial do portal."
           actions={[
-            { label: 'Iniciar diagnostico', href: '/diagnostico-financeiro#iniciar' },
+            { label: 'Ver comparadores', href: '/comparadores' },
             { label: 'Conhecer Cote Finance AI', href: coteFinanceAppUrl, external: true, tone: 'secondary' }
           ]}
         />
@@ -53,66 +40,72 @@ export function DiagnosticoFinanceiroPage() {
         <section className="section-space section-muted">
           <div className="container two-col-grid">
             <article className="panel-card">
-              <SectionHeader title="O que o diagnostico analisa" />
-              <ul>
-                {diagnosisScope.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <SectionHeader title="Como funciona a recomendacao" />
+              <ol>
+                <li>Coletamos objetivo, score, renda e nivel de pressao financeira.</li>
+                <li>As regras ativas priorizam tipo de produto e filtros mais aderentes.</li>
+                <li>O clique final segue para /go/[slug], registrando origem e campanha.</li>
+              </ol>
             </article>
             <article className="panel-card">
-              <SectionHeader title="Para quem serve" />
-              <ul>
-                {audience.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <SectionHeader title="Gerar recomendacoes agora" />
+              <form className="diagnosis-form" method="get">
+                <label htmlFor="primaryGoal">Objetivo principal</label>
+                <select id="primaryGoal" name="primaryGoal" defaultValue={input.primaryGoal}>
+                  <option value="save">Reduzir custo</option>
+                  <option value="cashback">Buscar cashback</option>
+                  <option value="credit">Reorganizar credito</option>
+                  <option value="account">Abrir conta digital</option>
+                  <option value="financing">Planejar financiamento</option>
+                </select>
+
+                <label htmlFor="creditScoreBand">Faixa de score</label>
+                <select id="creditScoreBand" name="creditScoreBand" defaultValue={input.creditScoreBand}>
+                  <option value="low">Baixo</option>
+                  <option value="mid">Medio</option>
+                  <option value="high">Alto</option>
+                </select>
+
+                <label htmlFor="incomeBand">Faixa de renda</label>
+                <select id="incomeBand" name="incomeBand" defaultValue={input.incomeBand}>
+                  <option value="low">Ate R$ 3 mil</option>
+                  <option value="mid">R$ 3 mil a R$ 10 mil</option>
+                  <option value="high">Acima de R$ 10 mil</option>
+                </select>
+
+                <label htmlFor="debtLevel">Pressao de dividas</label>
+                <select id="debtLevel" name="debtLevel" defaultValue={input.debtLevel}>
+                  <option value="low">Baixa</option>
+                  <option value="mid">Media</option>
+                  <option value="high">Alta</option>
+                </select>
+
+                <label className="checkbox-row" htmlFor="wantsNoAnnualFee">
+                  <input id="wantsNoAnnualFee" name="wantsNoAnnualFee" type="checkbox" defaultChecked={input.wantsNoAnnualFee} value="true" />
+                  <span>Priorizar opcoes sem anuidade quando aplicavel</span>
+                </label>
+
+                <button className="btn btn-primary" type="submit">
+                  Gerar recomendacoes
+                </button>
+              </form>
             </article>
           </div>
         </section>
 
-        <section id="iniciar" className="section-space">
-          <div className="container">
-            <SectionHeader
-              title="Como funciona"
-              description="Fluxo simples em tres etapas para gerar diagnostico rapido e acionavel."
-            />
-            <div className="steps-grid">
-              {steps.map((step) => (
-                <article key={step.step} className="step-card">
-                  <h3>{step.step}</h3>
-                  <p>{step.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-space section-muted">
-          <div className="container">
-            <article className="diagnosis-result-card">
-              <h2>O que voce recebe ao final</h2>
-              <div className="result-grid">
-                <article>
-                  <h3>Pontuacao de saude financeira</h3>
-                  <p>Indicador para acompanhar evolucao da sua estrutura financeira no tempo.</p>
-                </article>
-                <article>
-                  <h3>Prioridades de curto prazo</h3>
-                  <p>Acoes com maior impacto para reduzir custo e organizar seu caixa rapidamente.</p>
-                </article>
-                <article>
-                  <h3>Direcao de medio prazo</h3>
-                  <p>Plano para consolidar ganhos e evitar retrocessos na rotina financeira.</p>
-                </article>
-              </div>
-            </article>
-          </div>
-        </section>
+        <RecommendationBlock
+          heading={recommendation?.title ?? 'Recomendacoes aparecem aqui ao final do diagnostico'}
+          rationale={
+            recommendation?.rationale ??
+            'Preencha o formulario para gerar sugestoes baseadas em regras ativas, perfil e categoria de necessidade.'
+          }
+          offers={recommendation?.offers ?? []}
+          sourcePage="diagnostico-financeiro"
+        />
 
         <CTASection
-          title="Pronto para sair do improviso financeiro?"
-          description="Avance para o Cote Finance AI para acompanhar seu plano de forma continua."
+          title="Quer aprofundar a leitura antes do clique final?"
+          description="Valide as sugestoes no comparador e avance para o Cote Finance AI quando quiser uma camada premium de contexto financeiro."
           primaryLabel="Explorar comparadores"
           primaryHref="/comparadores"
           secondaryLabel="Abrir Cote Finance AI"
@@ -120,14 +113,6 @@ export function DiagnosticoFinanceiroPage() {
           secondaryExternal
           dark
         />
-
-        <section className="section-space">
-          <div className="container section-actions">
-            <Link className="btn btn-secondary" href="/editorial">
-              Ler conteudo antes de iniciar
-            </Link>
-          </div>
-        </section>
       </main>
       <SiteFooter />
     </>

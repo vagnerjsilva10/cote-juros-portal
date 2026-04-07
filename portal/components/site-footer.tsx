@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 import { FooterColumn } from '@/components/ui/footer-column';
 import { coteFinanceAppUrl } from '@/data/homepage';
@@ -16,9 +16,10 @@ const footerColumns = [
   {
     title: 'Comparadores',
     items: [
-      { label: 'Cartoes de credito', href: '/cartoes-de-credito' },
+      { label: 'Cartoes de credito', href: '/cartoes' },
       { label: 'Emprestimos', href: '/emprestimos' },
       { label: 'Financiamento', href: '/financiamento' },
+      { label: 'Contas digitais', href: '/contas' },
       { label: 'Comparador interativo', href: '/comparador-interativo' }
     ]
   },

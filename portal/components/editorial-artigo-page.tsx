@@ -24,7 +24,7 @@ export function EditorialArtigoPage() {
                 Um guia pratico para reorganizar dividas caras, aumentar previsibilidade de caixa e
                 recuperar margem para investimentos de medio prazo.
               </p>
-              <p className="article-meta">Por Equipe Editorial Cote Juros â€¢ Atualizado em 7 de abril de 2026</p>
+              <p className="article-meta">Por Equipe Editorial Cote Juros • Atualizado em 7 de abril de 2026</p>
 
               <h2>1. Mapeie o custo real das suas dividas</h2>
               <p>

@@ -1,3 +1,4 @@
+﻿import type { ReactNode } from 'react';
 import Link from 'next/link';
 
 type HeroAction = {
@@ -13,6 +14,8 @@ type PageHeroProps = {
   subtitle: string;
   actions?: HeroAction[];
   align?: 'left' | 'center';
+  variant?: 'default' | 'home' | 'comparison' | 'tool' | 'editorial' | 'institutional';
+  panel?: ReactNode;
 };
 
 function actionClass(tone: HeroAction['tone']) {
@@ -21,34 +24,56 @@ function actionClass(tone: HeroAction['tone']) {
   return 'btn btn-primary';
 }
 
-export function PageHero({ eyebrow, title, subtitle, actions, align = 'left' }: PageHeroProps) {
+export function PageHero({
+  eyebrow,
+  title,
+  subtitle,
+  actions,
+  align = 'left',
+  variant = 'default',
+  panel
+}: PageHeroProps) {
+  const heroClass = [
+    'page-hero',
+    `page-hero-${variant}`,
+    align === 'center' ? 'centered' : '',
+    panel ? 'has-panel' : ''
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <section className={`page-hero ${align === 'center' ? 'centered' : ''}`}>
+    <section className={heroClass}>
       <div className="container">
-        {eyebrow ? <p className="hero-eyebrow">{eyebrow}</p> : null}
-        <h1>{title}</h1>
-        <p>{subtitle}</p>
-        {actions?.length ? (
-          <div className="hero-actions">
-            {actions.map((action) =>
-              action.external ? (
-                <a
-                  key={`${action.href}-${action.label}`}
-                  className={actionClass(action.tone)}
-                  href={action.href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {action.label}
-                </a>
-              ) : (
-                <Link key={`${action.href}-${action.label}`} className={actionClass(action.tone)} href={action.href}>
-                  {action.label}
-                </Link>
-              )
-            )}
+        <div className={panel ? 'page-hero-grid has-panel' : 'page-hero-grid'}>
+          <div className="hero-copy">
+            {eyebrow ? <p className="hero-eyebrow">{eyebrow}</p> : null}
+            <h1>{title}</h1>
+            <p>{subtitle}</p>
+            {actions?.length ? (
+              <div className="hero-actions">
+                {actions.map((action) =>
+                  action.external ? (
+                    <a
+                      key={`${action.href}-${action.label}`}
+                      className={actionClass(action.tone)}
+                      href={action.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {action.label}
+                    </a>
+                  ) : (
+                    <Link key={`${action.href}-${action.label}`} className={actionClass(action.tone)} href={action.href}>
+                      {action.label}
+                    </Link>
+                  )
+                )}
+              </div>
+            ) : null}
           </div>
-        ) : null}
+          {panel ? <div className="hero-panel-wrap">{panel}</div> : null}
+        </div>
       </div>
     </section>
   );

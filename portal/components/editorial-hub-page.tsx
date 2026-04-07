@@ -9,7 +9,7 @@ import { SectionHeader } from '@/components/ui/section-header';
 import { coteFinanceAppUrl } from '@/data/homepage';
 
 const categories = [
-  { title: 'Cartoes', href: '/cartoes-de-credito', description: 'Uso inteligente de limite, beneficios e custo.' },
+  { title: 'Cartoes', href: '/cartoes', description: 'Uso inteligente de limite, beneficios e custo.' },
   { title: 'Emprestimos', href: '/emprestimos', description: 'Renegociacao e estruturacao de credito.' },
   { title: 'Mercado', href: '/analise-de-mercado', description: 'Leitura de Selic, spread e oferta de credito.' },
   { title: 'Planejamento', href: '/guias', description: 'Metodo para organizar caixa, dividas e patrimonio.' }
@@ -97,7 +97,7 @@ export function EditorialHubPage() {
               <article className="panel-card">
                 <h3>Cartoes</h3>
                 <p>Limite, rotativo, cashback, pontos e estrategia de uso recorrente.</p>
-                <Link className="card-link" href="/cartoes-de-credito">
+                <Link className="card-link" href="/cartoes">
                   Ver conteudos de cartoes
                 </Link>
               </article>
