@@ -4,7 +4,15 @@ import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { coteFinanceAppUrl } from '@/data/homepage';
 
-const productCards = [
+type ProductCard = {
+  title: string;
+  description: string;
+  href: string;
+  cta: string;
+  external?: boolean;
+};
+
+const productCards: ProductCard[] = [
   {
     title: 'Comparadores',
     description: 'Compare cartões, empréstimos e financiamento com leitura clara de taxas.',
@@ -24,7 +32,7 @@ const productCards = [
     cta: 'Conhecer aplicativo',
     external: true
   }
-] as const;
+];
 
 export function ProdutosPage() {
   return (
@@ -76,4 +84,3 @@ export function ProdutosPage() {
     </>
   );
 }
-
