@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cote Finance AI - Inteligência Financeira</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "surface": "#f9f9ff",
+                    "on-surface-variant": "#424656",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#003da9",
+                    "primary": "#004ccd",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#0052dd",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#4fdbc8",
+                    "secondary-container": "#8a4cfc",
+                    "surface-dim": "#d3daee",
+                    "surface-container": "#e9edff",
+                    "tertiary": "#006358",
+                    "background": "#f9f9ff",
+                    "on-primary-container": "#f3f3ff",
+                    "secondary": "#712ae2",
+                    "surface-container-low": "#f1f3ff",
+                    "inverse-primary": "#b4c5ff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container-high": "#e2e8fc",
+                    "outline-variant": "#c3c6d8",
+                    "primary-container": "#0f62fe",
+                    "inverse-on-surface": "#edf0ff",
+                    "on-background": "#151b2a",
+                    "secondary-fixed": "#eaddff",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#dce2f6",
+                    "surface-bright": "#f9f9ff",
+                    "on-secondary-fixed": "#25005a",
+                    "on-secondary-container": "#fffbff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#00174c",
+                    "tertiary-fixed": "#71f8e4",
+                    "on-tertiary-fixed": "#00201c",
+                    "inverse-surface": "#2a3040",
+                    "on-tertiary-container": "#ccfff5",
+                    "error-container": "#ffdad6",
+                    "outline": "#737687",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "tertiary-container": "#007e71",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-highest": "#dce2f6",
+                    "on-surface": "#151b2a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-2xl shadow-slate-900/5">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white">Cote Juros</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 font-medium pb-1 hover:text-blue-600 transition-colors duration-300" href="#">Comparison</a>
+<a class="text-slate-500 font-medium pb-1 hover:text-blue-600 transition-colors duration-300" href="#">Tools</a>
+<a class="text-slate-500 font-medium pb-1 hover:text-blue-600 transition-colors duration-300" href="#">Editorial</a>
+<a class="text-blue-700 font-bold border-b-2 border-blue-600 pb-1 transition-colors duration-300" href="#">AI Platform</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-2 rounded-full font-bold transition-transform scale-95 active:scale-90 hover:shadow-lg">Diagnostic</button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-8 pt-20 pb-32 overflow-hidden">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-wide text-primary bg-primary-fixed rounded-full">
+                        INTRODUZINDO COTE FINANCE AI
+                    </span>
+<h1 class="text-6xl md:text-7xl font-extrabold tracking-tighter leading-[1.1] mb-8 text-on-surface">
+                        Sua vida financeira, finalmente com <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">clareza.</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-10 max-w-xl">
+                        O Cote Finance AI analisa seus gastos, identifica desperdícios invisíveis e mostra o melhor próximo passo financeiro com precisão cirúrgica.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-bold text-lg shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform">
+                            Começar agora — Grátis
+                        </button>
+<button class="px-8 py-4 bg-surface-container-lowest text-on-surface rounded-full font-bold text-lg border border-outline-variant/20 hover:bg-surface-container-low transition-colors">
+                            Ver demonstração
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute -bottom-20 -left-20 w-96 h-96 bg-secondary/10 blur-[100px] rounded-full"></div>
+<div class="relative bg-surface-container-lowest rounded-[2rem] p-4 shadow-2xl border border-white/50 overflow-hidden">
+<img alt="high-fidelity financial dashboard interface showing colorful spending charts, AI recommendations, and asset growth graphs in a sleek modern design" class="w-full h-auto rounded-xl" data-alt="high-fidelity financial dashboard interface showing colorful spending charts, AI recommendations, and asset growth graphs in a sleek modern design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf8ZvhUrMrUvTKSVQa4ufaii9jj9oHz0C8WlCAcTpL6u23ajh0DKK-JNjJJSjyFjNwla0lni1pbaOCO1kl-EOtjKD_F51lLhfRaSUqJAv0duIwzf0Xe_N8xg7iKMJP39HiLenmphQT9w2IdMay-Dds583jOxnzlsLVj5VkxZObDttCfHTOaG9xNP20nyxnrJq63WcSkRTunIyS6l_lhYnthaUUY6w041_9_D8cXKfTbwFLx4lb7AEKOdVrzS7v3C9CJO6l5ZV3Vrw"/>
+<div class="absolute bottom-8 left-8 right-8 glass-panel p-6 rounded-2xl border border-white/40 shadow-xl">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Insight da IA</p>
+<p class="text-sm text-on-surface-variant">Detectamos 3 assinaturas inativas. Você pode economizar R$ 142,90 este mês.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-extrabold tracking-tight mb-4 text-on-surface">Tecnologia que cuida do seu patrimônio</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Automatizamos o trabalho pesado para você focar no que realmente importa: seus objetivos.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Bento Card 1 -->
+<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-[2rem] shadow-sm flex flex-col justify-between overflow-hidden relative group">
+<div>
+<div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined">sync_alt</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Sincronização Inteligente</h3>
+<p class="text-on-surface-variant max-w-md">Conecte suas contas com segurança bancária. Nossa IA categoriza cada transação automaticamente com 99% de precisão.</p>
+</div>
+<div class="mt-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<img alt="abstract visual representation of secure data synchronization with flowing blue lines and glowing nodes representing financial connections" class="w-full h-48 object-cover rounded-xl" data-alt="abstract visual representation of secure data synchronization with flowing blue lines and glowing nodes representing financial connections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD616rcfzp9Yfbg9epxzF5CjfwHdKnTBfm7UgN5s9tNxRwK3TZytXbC-5uzc61lBAGXgzdCt5lRYqwLWrHcYOHy3XaR7HowGZs2-EJVzAvM0Ux9hd2g-GDI8lUcbc--GB9OWMP9yR0G38lcWkD2zxsy5kvB7VkE-E9iiexxCsZ9UrmWz9L_8afSzdBsTma0G7fVvDxE-Q-1l1RnufQeWYNcsipo5nlP8r3pD_Xt5sNZ7vIWnXVagIjdgoGDvQZPizgbsoS8O8uHe-c"/>
+</div>
+</div>
+<!-- Bento Card 2 -->
+<div class="bg-gradient-to-br from-primary to-secondary p-10 rounded-[2rem] text-white flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Insights em Tempo Real</h3>
+<p class="text-white/80">Receba alertas proativos quando seus gastos fugirem do padrão ou quando houver uma oportunidade de investimento.</p>
+</div>
+<div class="mt-8 text-4xl font-black text-white/20 tracking-tighter self-end">REAL-TIME</div>
+</div>
+<!-- Bento Card 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-[2rem] shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-tertiary-container rounded-xl flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined">track_changes</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Metas Dinâmicas</h3>
+<p class="text-on-surface-variant">Crie objetivos e deixe a IA calcular o caminho mais rápido para atingi-los, ajustando-se à sua realidade mensal.</p>
+</div>
+</div>
+<!-- Bento Card 4 -->
+<div class="md:col-span-2 bg-on-surface p-10 rounded-[2rem] text-white flex flex-col md:flex-row gap-8 items-center overflow-hidden">
+<div class="flex-1">
+<h3 class="text-2xl font-bold mb-4">Privacidade First-Class</h3>
+<p class="text-white/60">Seus dados são criptografados de ponta a ponta. Não vendemos suas informações e você tem controle total sobre o que é compartilhado.</p>
+</div>
+<div class="flex-1 flex justify-center">
+<span class="material-symbols-outlined text-[120px] text-primary/40 opacity-50">shield_lock</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Como Funciona -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="order-2 lg:order-1">
+<div class="space-y-16">
+<div class="flex gap-8">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center text-primary font-bold text-xl">1</div>
+<div>
+<h4 class="text-2xl font-bold mb-3">Conecte sua vida</h4>
+<p class="text-on-surface-variant leading-relaxed">Integração segura com as principais instituições financeiras em segundos. Seus dados chegam limpos e organizados.</p>
+</div>
+</div>
+<div class="flex gap-8">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center text-secondary font-bold text-xl">2</div>
+<div>
+<h4 class="text-2xl font-bold mb-3">Análise Curada</h4>
+<p class="text-on-surface-variant leading-relaxed">Nossa IA processa milhares de dados para identificar tendências, desperdícios e padrões que passam despercebidos.</p>
+</div>
+</div>
+<div class="flex gap-8">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-tertiary flex items-center justify-center text-tertiary font-bold text-xl">3</div>
+<div>
+<h4 class="text-2xl font-bold mb-3">Evolução Guiada</h4>
+<p class="text-on-surface-variant leading-relaxed">Receba recomendações personalizadas e acompanhe seu crescimento patrimonial em um único dashboard unificado.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="text-5xl font-extrabold tracking-tighter mb-10 text-on-surface">Simples, técnico e transparente.</h2>
+<div class="p-8 bg-surface-container-high rounded-[2rem] border border-outline-variant/10">
+<img alt="stylized conceptual 3D render of a futuristic AI core processing financial data streams in a clean minimalist environment" class="w-full rounded-2xl shadow-lg" data-alt="stylized conceptual 3D render of a futuristic AI core processing financial data streams in a clean minimalist environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfoF-jYtFp3WE-NFwS32XkwLUbLTS8o2N6oCEzoy1vteRq_-C-gDNDwvvVQVJBOYYx27d7Co2QkLlxjWAcGvRxSDYoPn9eszLQkMTGXJdfpX6gahMbLxKHy8GhyyGU8LiXgfnDB1t0IXzNFY5s4jFzL6-ItGzYrqmtUdmWmMjB6PSLIX3_cV7gmn1dEF5WLw9Fy3gvnKrs1kjJREXdCEekw7CnAsjGTlkd7JVwN7j0BV8Vw-_Lk-cZSfEugJtfH_vaHP0QSa3HGok"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-24 bg-surface-container-low/50">
+<div class="max-w-5xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-extrabold tracking-tight mb-4 text-on-surface">Planos para sua evolução</h2>
+<p class="text-on-surface-variant">Escolha o nível de inteligência que você precisa hoje.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Free Plan -->
+<div class="bg-surface-container-lowest p-10 rounded-[2.5rem] shadow-sm border border-outline-variant/5">
+<div class="mb-10">
+<span class="text-sm font-bold text-outline tracking-widest uppercase">FREE</span>
+<div class="text-5xl font-black mt-2">R$ 0<span class="text-xl font-medium text-outline">/mês</span></div>
+</div>
+<ul class="space-y-6 mb-12 text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl">check_circle</span>
+                                Conexão com 1 banco
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl">check_circle</span>
+                                Categorização básica
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl">check_circle</span>
+                                Metas simplificadas
+                            </li>
+<li class="flex items-center gap-3 opacity-30">
+<span class="material-symbols-outlined text-xl">cancel</span>
+                                Insights avançados de IA
+                            </li>
+</ul>
+<button class="w-full py-4 px-6 rounded-full border-2 border-outline-variant/30 font-bold hover:bg-surface-container transition-colors">Começar Grátis</button>
+</div>
+<!-- Premium Plan -->
+<div class="bg-on-surface p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden text-white">
+<div class="absolute top-0 right-0 p-6">
+<span class="bg-primary px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest">Recomendado</span>
+</div>
+<div class="mb-10">
+<span class="text-sm font-bold text-white/50 tracking-widest uppercase">PREMIUM</span>
+<div class="text-5xl font-black mt-2">R$ 29<span class="text-xl font-medium text-white/50">,90/mês</span></div>
+</div>
+<ul class="space-y-6 mb-12 text-white/80">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Bancos ilimitados
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                AI Insight Pro (Análise Profunda)
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Relatórios personalizados PDF/CSV
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Suporte Prioritário
+                            </li>
+</ul>
+<button class="w-full py-4 px-6 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold hover:scale-[1.02] transition-transform shadow-lg shadow-primary/30">Assinar Premium</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-8">
+<div class="max-w-5xl mx-auto bg-primary-container rounded-[3rem] p-16 text-center text-white relative overflow-hidden shadow-[0_40px_100px_-20px_rgba(15,98,254,0.3)]">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary to-secondary opacity-80"></div>
+<div class="relative z-10">
+<h2 class="text-5xl md:text-6xl font-black tracking-tight mb-8">Pronto para a clareza?</h2>
+<p class="text-xl text-white/80 mb-12 max-w-xl mx-auto">Junte-se a milhares de pessoas que já transformaram sua relação com o dinheiro através da tecnologia.</p>
+<button class="px-12 py-5 bg-white text-primary rounded-full font-black text-xl hover:shadow-2xl transition-all hover:scale-[1.05] active:scale-95">Criar conta gratuita</button>
+<p class="mt-8 text-sm text-white/50">Sem cartão de crédito necessário. Cancele quando quiser.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full pt-20 pb-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 px-8 max-w-7xl mx-auto">
+<div class="col-span-2 lg:col-span-1">
+<div class="text-xl font-black text-slate-900 dark:text-white mb-6">Cote Juros</div>
+<p class="text-slate-500 text-sm leading-relaxed max-w-xs">A plataforma definitiva para curadoria e inteligência financeira na palma da sua mão.</p>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6">Product</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors text-sm" href="#">Comparison</a></li>
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors text-sm" href="#">Tools</a></li>
+<li><a class="text-blue-600 font-semibold text-sm" href="#">AI Platform</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6">Company</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors text-sm" href="#">About Us</a></li>
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors text-sm" href="#">Editorial</a></li>
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors text-sm" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6">Legal</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors text-sm" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-20 border-t border-slate-200 pt-10 text-center">
+<p class="font-inter text-sm tracking-wide text-slate-500">© 2024 Cote Juros. The Financial Curator. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

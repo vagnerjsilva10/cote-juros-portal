@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comparador de Cartões | Cote Juros</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#00201c",
+                    "primary-container": "#0f62fe",
+                    "surface-variant": "#dce2f6",
+                    "surface-bright": "#f9f9ff",
+                    "outline-variant": "#c3c6d8",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2a3040",
+                    "inverse-primary": "#b4c5ff",
+                    "on-primary-fixed": "#00174c",
+                    "primary": "#004ccd",
+                    "on-surface-variant": "#424656",
+                    "tertiary-container": "#007e71",
+                    "surface-container-low": "#f1f3ff",
+                    "secondary": "#712ae2",
+                    "on-secondary-fixed": "#25005a",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "background": "#f9f9ff",
+                    "surface-dim": "#d3daee",
+                    "secondary-container": "#8a4cfc",
+                    "on-surface": "#151b2a",
+                    "tertiary-fixed": "#71f8e4",
+                    "surface-tint": "#0052dd",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#fffbff",
+                    "surface-container": "#e9edff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "on-tertiary-container": "#ccfff5",
+                    "outline": "#737687",
+                    "surface": "#f9f9ff",
+                    "on-primary-container": "#f3f3ff",
+                    "secondary-fixed": "#eaddff",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "inverse-on-surface": "#edf0ff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-error": "#ffffff",
+                    "on-background": "#151b2a",
+                    "surface-container-high": "#e2e8fc",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "tertiary-fixed-dim": "#4fdbc8",
+                    "tertiary": "#006358",
+                    "surface-container-highest": "#dce2f6",
+                    "on-primary-fixed-variant": "#003da9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-2xl shadow-slate-900/5 dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white">Cote Juros</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" href="#">Ferramentas</a>
+<a class="text-blue-700 dark:text-blue-300 font-bold border-b-2 border-blue-600 pb-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" href="#">Comparadores</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" href="#">Sobre</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" href="#">Editorial</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" href="#">AI Platform</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold scale-95 active:scale-90 transition-transform shadow-lg shadow-primary/20">Diagnostic</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-4 md:px-8 max-w-[1600px] mx-auto">
+<!-- Hero Section & Social Proof -->
+<header class="mb-12 text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-fixed text-on-primary-fixed rounded-full text-xs font-bold tracking-widest uppercase mb-6">
+<span class="material-symbols-outlined text-sm" data-weight="fill">verified_user</span>
+                Mais de 50 mil cartões comparados este mês
+            </div>
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">Escolha seu próximo <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Cartão de Crédito</span></h1>
+<p class="text-outline text-lg max-w-2xl leading-relaxed">Analise taxas, milhas e benefícios lado a lado com nossa curadoria financeira de alta precisão.</p>
+</header>
+<div class="flex flex-col lg:flex-row gap-8 items-start">
+<!-- Filter Sidebar -->
+<aside class="w-full lg:w-80 flex-shrink-0 bg-surface-container-low rounded-xl p-8 sticky top-32">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-lg font-bold">Filtros Avançados</h3>
+<span class="material-symbols-outlined text-outline">tune</span>
+</div>
+<div class="space-y-8">
+<!-- Filter Group -->
+<div>
+<label class="block text-xs font-bold text-primary mb-4 uppercase tracking-widest">Anuidade</label>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium text-on-surface-variant group-hover:text-on-surface">Sem Anuidade</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium text-on-surface-variant group-hover:text-on-surface">Anuidade Grátis (Gasto Mínimo)</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-primary mb-4 uppercase tracking-widest">Benefícios</label>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium text-on-surface-variant group-hover:text-on-surface">Cashback Direto</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium text-on-surface-variant group-hover:text-on-surface">Acúmulo de Milhas</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium text-on-surface-variant group-hover:text-on-surface">Acesso a VIP Lounge</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-primary mb-4 uppercase tracking-widest">Score Necessário</label>
+<input class="w-full h-2 bg-surface-container-highest rounded-full appearance-none cursor-pointer accent-primary" max="1000" min="0" step="50" type="range"/>
+<div class="flex justify-between mt-2 text-xs font-bold text-outline">
+<span>0</span>
+<span>500</span>
+<span>1000</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-primary mb-4 uppercase tracking-widest">Instituição</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg p-3 text-sm font-medium focus:ring-2 focus:ring-primary">
+<option>Todos os Bancos</option>
+<option>Itaú</option>
+<option>Santander</option>
+<option>Nubank</option>
+<option>Bradesco</option>
+</select>
+</div>
+</div>
+<button class="w-full mt-10 bg-on-surface text-surface py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-colors">
+                    Aplicar Filtros
+                </button>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-grow space-y-8">
+<!-- Comparison Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col hover:shadow-2xl hover:shadow-primary/5 transition-all group border border-transparent hover:border-primary-fixed">
+<div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="ultra premium black credit card with metallic gold accents floating on a clean minimalist blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvqTEmmeRTVW21Xa4v5m3rYLl94pbgXgoYIQGK9LnOmJ_zRvYYmirVcHYoijDmQOAOFYpDV9AvDVRMMxPhzMwexob_8GpveVZiNbbUeBNoVJuikqBVd7ooMbgfWvi_WuB5q9A8omc_8wJAtvDc2-12_w1xyshRG89htQaQq04P1WcWWXh-LVRJ7yE3VmagWOEWwceArfHq8nTvZkOQMPQpy4ith80uixTfVSad_aTEvRIaAKFUEgN21FtxjJ3-O0EMHkyK8tmPbHg"/>
+<div class="absolute top-4 right-4 bg-tertiary text-on-tertiary text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">Top Escolha</div>
+</div>
+<div class="flex-grow">
+<h3 class="text-2xl font-bold mb-2">Inter Black</h3>
+<p class="text-sm text-outline mb-6">Ideal para viajantes frequentes e investidores.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="block text-[10px] font-bold text-primary uppercase mb-1">Cashback</span>
+<span class="text-lg font-black">1.25%</span>
+</div>
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="block text-[10px] font-bold text-primary uppercase mb-1">Anuidade</span>
+<span class="text-lg font-black">Grátis</span>
+</div>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-lg">check_circle</span>
+                                    Acesso ilimitado VIP Lounge
+                                </li>
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-lg">check_circle</span>
+                                    Seguro viagem incluso
+                                </li>
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-lg">check_circle</span>
+                                    Concierge 24/7
+                                </li>
+</ul>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-gradient-to-r from-primary to-secondary text-on-primary py-4 rounded-full font-bold text-sm tracking-wide shadow-lg shadow-primary/20 scale-100 hover:scale-[1.02] active:scale-95 transition-all">
+                                Solicitar cartão
+                            </button>
+<p class="text-[10px] text-center text-outline-variant leading-tight">Ao clicar, você será redirecionado ao site oficial do parceiro. Podemos receber comissão por indicação.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col hover:shadow-2xl hover:shadow-primary/5 transition-all group border border-transparent hover:border-primary-fixed">
+<div class="relative h-48 mb-6 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="modern deep purple credit card with holographic chip design resting on a white smooth marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbvxKAT_C3-Vo4QUka2TXyP-jikebA2ss_qIEPzEypYBvhJdDJrxmuB3lAYAUCq6wf6CZz4bkDNSf-HSRVHncPcGtMBX5Cov2Uz_ytlj0cj95m9FzvSRL0x5eDsm9IB7fI9Pulz0_zi2XhxG-UDNMrTTxS_wcdPEKY2T_GM_74tXk-qXqQ_wZmoP6-TbD6fGn0PD2t3asfWkWvTRserhsJ7EhacjmUr2svcnBUooIpH92iHG-jvO4uETX7ZWSZrVjF46lIvWhDzSQ"/>
+</div>
+<div class="flex-grow">
+<h3 class="text-2xl font-bold mb-2">Nubank Ultravioleta</h3>
+<p class="text-sm text-outline mb-6">A experiência premium do roxinho para alta renda.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="block text-[10px] font-bold text-primary uppercase mb-1">Cashback</span>
+<span class="text-lg font-black">1.0%</span>
+</div>
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="block text-[10px] font-bold text-primary uppercase mb-1">Anuidade</span>
+<span class="text-lg font-black">R$ 49/mês</span>
+</div>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-lg">check_circle</span>
+                                    Cashback que cresce 200% CDI
+                                </li>
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-lg">check_circle</span>
+                                    Cartão de metal exclusivo
+                                </li>
+<li class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-lg">check_circle</span>
+                                    Benefícios Mastercard Black
+                                </li>
+</ul>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-gradient-to-r from-primary to-secondary text-on-primary py-4 rounded-full font-bold text-sm tracking-wide shadow-lg shadow-primary/20 scale-100 hover:scale-[1.02] active:scale-95 transition-all">
+                                Solicitar cartão
+                            </button>
+<p class="text-[10px] text-center text-outline-variant leading-tight">Ao clicar, você será redirecionado ao site oficial do parceiro. Podemos receber comissão por indicação.</p>
+</div>
+</div>
+<!-- Side Banner / Conversion Area -->
+<div class="bg-on-surface rounded-xl p-8 text-surface flex flex-col justify-between relative overflow-hidden xl:row-span-1">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[60px]"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-6 text-primary-fixed">
+<span class="material-symbols-outlined" data-weight="fill">neurology</span>
+<span class="font-bold tracking-widest text-xs uppercase">Cote Finance AI</span>
+</div>
+<h3 class="text-3xl font-extrabold mb-4 leading-tight">Não sabe qual escolher?</h3>
+<p class="text-slate-400 text-sm mb-8 leading-relaxed">Nossa Inteligência Artificial analisa seu perfil de gastos e recomenda o melhor cartão em 15 segundos.</p>
+</div>
+<div class="relative z-10">
+<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-xl font-bold flex items-center justify-center gap-2 group">
+                                Iniciar Diagnóstico
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product List View (Table-like for deep spec comparison) -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden mt-12">
+<div class="p-8 border-b border-outline-variant/10">
+<h2 class="text-xl font-bold">Visão Detalhada</h2>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/50 text-outline text-[10px] font-bold uppercase tracking-widest">
+<th class="px-8 py-4">Produto</th>
+<th class="px-8 py-4">Banco</th>
+<th class="px-8 py-4">Milhas / R$</th>
+<th class="px-8 py-4">Score Recom.</th>
+<th class="px-8 py-4">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-white transition-colors cursor-pointer">
+<td class="px-8 py-6 font-bold">XP Visa Infinite</td>
+<td class="px-8 py-6 text-sm">XP Investimentos</td>
+<td class="px-8 py-6 text-sm font-medium">Investback 1%</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[85%] h-full bg-primary"></div>
+</div>
+<span class="text-xs font-bold">850+</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-black rounded-full uppercase">Ativo</span>
+</td>
+</tr>
+<tr class="hover:bg-white transition-colors cursor-pointer">
+<td class="px-8 py-6 font-bold">BTG Pactual Black</td>
+<td class="px-8 py-6 text-sm">BTG Pactual</td>
+<td class="px-8 py-6 text-sm font-medium">Até 2.2 pts</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[70%] h-full bg-primary"></div>
+</div>
+<span class="text-xs font-bold">700+</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-black rounded-full uppercase">Ativo</span>
+</td>
+</tr>
+<tr class="hover:bg-white transition-colors cursor-pointer">
+<td class="px-8 py-6 font-bold">Itaú Personnalité</td>
+<td class="px-8 py-6 text-sm">Itaú Unibanco</td>
+<td class="px-8 py-6 text-sm font-medium">1.5 pts</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[90%] h-full bg-primary"></div>
+</div>
+<span class="text-xs font-bold">900+</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-surface-container-highest text-outline text-[10px] font-black rounded-full uppercase">Review</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-20 pb-10 bg-slate-50 dark:bg-slate-950">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 px-8 max-w-7xl mx-auto">
+<div class="col-span-2 lg:col-span-1">
+<div class="text-xl font-black text-slate-900 dark:text-white mb-6">Cote Juros</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 font-inter">A plataforma definitiva para curadoria financeira e decisões inteligentes sobre crédito e investimentos.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-blue-600 cursor-pointer hover:opacity-70 transition-opacity">public</span>
+<span class="material-symbols-outlined text-blue-600 cursor-pointer hover:opacity-70 transition-opacity">share</span>
+<span class="material-symbols-outlined text-blue-600 cursor-pointer hover:opacity-70 transition-opacity">alternate_email</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-on-surface mb-2">Produtos</h4>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Cartões</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Empréstimos</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Financiamento</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-on-surface mb-2">Ferramentas</h4>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Calculadoras</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Simuladores</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Comparadores</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-on-surface mb-2">Conteúdo</h4>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Editorial</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="col-span-2 md:col-span-4 lg:col-span-1 border-t md:border-t-0 pt-8 md:pt-0">
+<h4 class="font-bold text-on-surface mb-6">Inscreva-se</h4>
+<div class="bg-white dark:bg-slate-900 p-1 rounded-full flex shadow-sm border border-outline-variant/10">
+<input class="bg-transparent border-none focus:ring-0 text-sm px-4 flex-grow" placeholder="Seu e-mail" type="text"/>
+<button class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-20 pt-8 border-t border-outline-variant/5 text-center">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-inter tracking-wide">© 2024 Cote Juros. The Financial Curator. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

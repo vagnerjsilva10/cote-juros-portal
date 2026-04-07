@@ -1,0 +1,5 @@
+SyntaxError: Unexpected token '﻿', "﻿{
+  "name"... is not valid JSON
+while determining default 'output.uniqueName' from 'name' in C:\dev\cote-juros-portal\portal\package.json
+    at JSON.parse (<anonymous>)
+    at Array.map (<anonymous>)

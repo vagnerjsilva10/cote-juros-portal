@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005048",
+                    "surface": "#f9f9ff",
+                    "on-surface-variant": "#424656",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#003da9",
+                    "primary": "#004ccd",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#0052dd",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#4fdbc8",
+                    "secondary-container": "#8a4cfc",
+                    "surface-dim": "#d3daee",
+                    "surface-container": "#e9edff",
+                    "tertiary": "#006358",
+                    "background": "#f9f9ff",
+                    "on-primary-container": "#f3f3ff",
+                    "secondary": "#712ae2",
+                    "surface-container-low": "#f1f3ff",
+                    "inverse-primary": "#b4c5ff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container-high": "#e2e8fc",
+                    "outline-variant": "#c3c6d8",
+                    "primary-container": "#0f62fe",
+                    "inverse-on-surface": "#edf0ff",
+                    "on-background": "#151b2a",
+                    "secondary-fixed": "#eaddff",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#dce2f6",
+                    "surface-bright": "#f9f9ff",
+                    "on-secondary-fixed": "#25005a",
+                    "on-secondary-container": "#fffbff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#00174c",
+                    "tertiary-fixed": "#71f8e4",
+                    "on-tertiary-fixed": "#00201c",
+                    "inverse-surface": "#2a3040",
+                    "on-tertiary-container": "#ccfff5",
+                    "error-container": "#ffdad6",
+                    "outline": "#737687",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "tertiary-container": "#007e71",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-highest": "#dce2f6",
+                    "on-surface": "#151b2a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .text-gradient-primary { background: linear-gradient(to right, #004ccd, #712ae2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-gradient-primary { background: linear-gradient(135deg, #0f62fe 0%, #7c3aed 100%); }
+        .bg-gradient-growth { background: linear-gradient(135deg, #3b82f6 0%, #14b8a6 100%); }
+        .glass-panel { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white">Cote Juros</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" href="#">Comparison</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" href="#">Tools</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" href="#">Editorial</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" href="#">AI Platform</a>
+</nav>
+<button class="bg-gradient-primary text-white px-6 py-2.5 rounded-full font-semibold scale-95 active:scale-90 transition-transform shadow-lg shadow-primary/20">
+                Diagnostic
+            </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-24 pb-32 px-8 lg:px-24">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+<div class="flex-1 space-y-8 text-center lg:text-left">
+<h1 class="text-5xl lg:text-7xl font-headline font-black tracking-tight leading-[1.1]">
+                        Pare de tomar decisões financeiras <span class="text-gradient-primary">no escuro.</span>
+</h1>
+<p class="text-xl text-outline max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Compare soluções financeiras, entenda seu dinheiro e descubra o próximo passo mais inteligente para sua vida financeira.
+                    </p>
+<div class="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center lg:justify-start">
+<button class="bg-gradient-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-primary/30 transition-all active:scale-95">
+                            Fazer diagnóstico financeiro
+                        </button>
+<button class="bg-surface-container-lowest text-on-surface px-8 py-4 rounded-full font-bold text-lg border border-outline-variant/30 hover:bg-surface-container transition-all active:scale-95">
+                            Conhecer o Cote Finance AI
+                        </button>
+</div>
+</div>
+<div class="flex-1 relative w-full aspect-square max-w-2xl">
+<!-- Dashboard Preview -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-[3rem] -rotate-3"></div>
+<div class="relative bg-surface-container-lowest rounded-[2rem] shadow-2xl p-6 border border-white h-full flex flex-col gap-6 overflow-hidden">
+<div class="flex justify-between items-center border-b border-surface-container pb-4">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-red-400"></div>
+<div class="w-3 h-3 rounded-full bg-amber-400"></div>
+<div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+</div>
+<div class="text-sm font-semibold text-outline">Análise em tempo real</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4 rounded-xl space-y-2">
+<div class="text-xs text-outline font-bold uppercase tracking-wider">Patrimônio Líquido</div>
+<div class="text-2xl font-headline font-extrabold">R$ 142.500</div>
+<div class="text-xs text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12% este mês
+                                </div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl space-y-2">
+<div class="text-xs text-outline font-bold uppercase tracking-wider">Score de Crédito</div>
+<div class="text-2xl font-headline font-extrabold">842</div>
+<div class="text-xs text-primary font-bold">Excelente</div>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest border border-surface-container rounded-xl p-4 overflow-hidden">
+<div class="flex justify-between items-end h-full gap-2">
+<div class="w-full bg-primary-fixed-dim/30 h-[40%] rounded-t-md"></div>
+<div class="w-full bg-primary-fixed-dim/30 h-[60%] rounded-t-md"></div>
+<div class="w-full bg-primary-fixed-dim/30 h-[45%] rounded-t-md"></div>
+<div class="w-full bg-primary-fixed-dim/30 h-[80%] rounded-t-md"></div>
+<div class="w-full bg-primary h-[95%] rounded-t-md"></div>
+<div class="w-full bg-primary-fixed-dim/30 h-[70%] rounded-t-md"></div>
+<div class="w-full bg-primary-fixed-dim/30 h-[55%] rounded-t-md"></div>
+</div>
+</div>
+<div class="absolute bottom-8 right-8 bg-on-surface text-surface p-4 rounded-2xl shadow-xl max-w-[200px] space-y-2 translate-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed" data-weight="fill">bolt</span>
+<span class="text-xs font-bold uppercase">AI Insight</span>
+</div>
+<p class="text-[10px] leading-tight">Você pode economizar R$ 450/mês refinanciando seu cartão.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3 Pilares -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+<div class="group bg-surface-container-lowest p-10 rounded-xl transition-all hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+<div class="w-16 h-16 bg-primary-fixed flex items-center justify-center rounded-2xl mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:text-white">credit_card</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Cartões de crédito</h3>
+<p class="text-outline leading-relaxed">As melhores opções do mercado comparadas com base no seu perfil de consumo e benefícios.</p>
+</div>
+<div class="group bg-surface-container-lowest p-10 rounded-xl transition-all hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+<div class="w-16 h-16 bg-secondary-fixed flex items-center justify-center rounded-2xl mb-8 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white">account_balance</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Empréstimos</h3>
+<p class="text-outline leading-relaxed">Taxas reais, clareza total e simulações que não comprometem seu score de crédito.</p>
+</div>
+<div class="group bg-surface-container-lowest p-10 rounded-xl transition-all hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+<div class="w-16 h-16 bg-tertiary-fixed flex items-center justify-center rounded-2xl mb-8 group-hover:bg-tertiary transition-colors">
+<span class="material-symbols-outlined text-tertiary text-3xl group-hover:text-white">query_stats</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Organização financeira</h3>
+<p class="text-outline leading-relaxed">Visualize para onde seu dinheiro vai e tome o controle total do seu planejamento mensal.</p>
+</div>
+</div>
+</section>
+<!-- Clareza Financeira Section -->
+<section class="py-32 px-8 max-w-4xl mx-auto text-center space-y-12">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">O Problema</span>
+<h2 class="text-4xl lg:text-6xl font-headline font-black leading-tight text-on-background">A confusão é o custo invisível do seu patrimônio.</h2>
+<div class="space-y-6 text-xl text-outline font-medium leading-relaxed">
+<p>Navegar pelo sistema financeiro tradicional é como tentar ler um contrato sob uma luz piscante. Taxas escondidas, juros compostos que trabalham contra você e uma enxurrada de opções irreais.</p>
+<p>A <span class="text-on-background font-bold">Cote Juros</span> nasceu para ser sua lanterna. Não somos um banco, somos o seu curador de oportunidades, filtrando o ruído para entregar clareza absoluta sobre cada centavo.</p>
+</div>
+</section>
+<!-- Comparadores (Ranking Cards) -->
+<section class="py-24 px-8 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div class="space-y-4">
+<h2 class="text-4xl font-headline font-extrabold tracking-tight">Comparadores em destaque</h2>
+<p class="text-outline">Atualizado hoje com as melhores taxas do mercado brasileiro.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all" href="#">Ver todos <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<div class="grid lg:grid-cols-3 gap-8">
+<!-- Melhores Cartões -->
+<div class="bg-surface border border-outline-variant/20 rounded-xl overflow-hidden">
+<div class="p-6 bg-surface-container-low border-b border-outline-variant/10">
+<h4 class="font-headline font-bold text-lg">Melhores cartões</h4>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<div class="p-4 flex items-center gap-4 hover:bg-white transition-colors cursor-pointer">
+<div class="w-12 h-8 bg-slate-800 rounded-md flex items-center justify-center text-[10px] text-white font-bold">CARD</div>
+<div class="flex-1">
+<div class="font-bold text-sm">Infinite Premium</div>
+<div class="text-xs text-outline">Pontos: 2.5 por dólar</div>
+</div>
+<div class="text-right">
+<div class="text-tertiary font-bold text-sm">TOP 1</div>
+</div>
+</div>
+<div class="p-4 flex items-center gap-4 hover:bg-white transition-colors cursor-pointer">
+<div class="w-12 h-8 bg-blue-900 rounded-md flex items-center justify-center text-[10px] text-white font-bold">BANK</div>
+<div class="flex-1">
+<div class="font-bold text-sm">Platinum Global</div>
+<div class="text-xs text-outline">Cashback: 1.5%</div>
+</div>
+<div class="text-right">
+<div class="text-outline font-bold text-sm">TOP 2</div>
+</div>
+</div>
+</div>
+<div class="p-4 text-center">
+<button class="text-sm font-bold text-primary">Ver ranking completo</button>
+</div>
+</div>
+<!-- Cartões sem anuidade -->
+<div class="bg-surface border border-outline-variant/20 rounded-xl overflow-hidden">
+<div class="p-6 bg-surface-container-low border-b border-outline-variant/10">
+<h4 class="font-headline font-bold text-lg">Cartões sem anuidade</h4>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<div class="p-4 flex items-center gap-4 hover:bg-white transition-colors cursor-pointer">
+<div class="w-12 h-8 bg-purple-600 rounded-md flex items-center justify-center text-[10px] text-white font-bold">DIGI</div>
+<div class="flex-1">
+<div class="font-bold text-sm">Digital Zero</div>
+<div class="text-xs text-outline">Anuidade: R$ 0</div>
+</div>
+<div class="text-right">
+<div class="text-tertiary font-bold text-sm">TOP 1</div>
+</div>
+</div>
+<div class="p-4 flex items-center gap-4 hover:bg-white transition-colors cursor-pointer">
+<div class="w-12 h-8 bg-emerald-600 rounded-md flex items-center justify-center text-[10px] text-white font-bold">ECO</div>
+<div class="flex-1">
+<div class="font-bold text-sm">Green Lite</div>
+<div class="text-xs text-outline">Benefícios sustentáveis</div>
+</div>
+<div class="text-right">
+<div class="text-outline font-bold text-sm">TOP 2</div>
+</div>
+</div>
+</div>
+<div class="p-4 text-center">
+<button class="text-sm font-bold text-primary">Ver ranking completo</button>
+</div>
+</div>
+<!-- Melhores Empréstimos -->
+<div class="bg-surface border border-outline-variant/20 rounded-xl overflow-hidden">
+<div class="p-6 bg-surface-container-low border-b border-outline-variant/10">
+<h4 class="font-headline font-bold text-lg">Melhores empréstimos</h4>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<div class="p-4 flex items-center gap-4 hover:bg-white transition-colors cursor-pointer">
+<div class="w-12 h-12 bg-on-surface rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">home</span>
+</div>
+<div class="flex-1">
+<div class="font-bold text-sm">Home Equity X</div>
+<div class="text-xs text-outline">Taxas a partir de 0.8% am</div>
+</div>
+<div class="text-right">
+<div class="text-tertiary font-bold text-sm">1.1%</div>
+</div>
+</div>
+<div class="p-4 flex items-center gap-4 hover:bg-white transition-colors cursor-pointer">
+<div class="w-12 h-12 bg-on-surface rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">person</span>
+</div>
+<div class="flex-1">
+<div class="font-bold text-sm">Pessoal Digital</div>
+<div class="text-xs text-outline">Liberação em 24h</div>
+</div>
+<div class="text-right">
+<div class="text-outline font-bold text-sm">2.4%</div>
+</div>
+</div>
+</div>
+<div class="p-4 text-center">
+<button class="text-sm font-bold text-primary">Ver todas as taxas</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ferramentas Section -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h2 class="text-4xl lg:text-5xl font-headline font-black tracking-tight">Ferramentas que simplificam o complexo.</h2>
+<p class="text-xl text-outline leading-relaxed">Pare de usar planilhas complexas. Nossas calculadoras foram desenhadas para dar respostas rápidas em segundos.</p>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+</div>
+<p class="text-on-surface font-medium">Cálculo real de CET (Custo Efetivo Total)</p>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+</div>
+<p class="text-on-surface font-medium">Comparativo de Juros Compostos vs Simples</p>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+</div>
+<p class="text-on-surface font-medium">Simulador de amortização de parcelas</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-2xl border border-white space-y-8">
+<h3 class="text-2xl font-headline font-bold">Simulador de Empréstimo</h3>
+<div class="space-y-10">
+<div class="space-y-4">
+<div class="flex justify-between font-bold">
+<span>Valor desejado</span>
+<span class="text-primary">R$ 25.000</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[45%] h-full bg-primary"></div>
+</div>
+<div class="flex justify-between text-xs text-outline font-bold">
+<span>R$ 1.000</span>
+<span>R$ 100.000</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between font-bold">
+<span>Prazo</span>
+<span class="text-primary">24 meses</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[30%] h-full bg-primary"></div>
+</div>
+<div class="flex justify-between text-xs text-outline font-bold">
+<span>6 meses</span>
+<span>60 meses</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex justify-between items-center">
+<div class="space-y-1">
+<div class="text-xs text-outline font-bold uppercase">Parcela estimada</div>
+<div class="text-3xl font-headline font-black">R$ 1.245,50</div>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill">insights</span>
+</div>
+<button class="w-full bg-on-surface text-surface py-5 rounded-xl font-bold text-lg hover:bg-slate-800 transition-colors">
+                                Comparar taxas agora
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Diagnóstico Financeiro (Dark Section) -->
+<section class="py-32 px-8 bg-[#0B1220] text-white overflow-hidden relative">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="space-y-10">
+<div class="inline-block bg-white/10 px-4 py-1 rounded-full border border-white/20 text-sm font-bold tracking-widest uppercase">Premium Service</div>
+<h2 class="text-5xl lg:text-7xl font-headline font-black leading-tight">Mapeamos seu futuro financeiro.</h2>
+<p class="text-xl text-slate-400 leading-relaxed max-w-xl">Nosso diagnóstico proprietário analisa quatro pilares críticos para determinar sua saúde financeira e sugerir otimizações imediatas.</p>
+<div class="grid sm:grid-cols-2 gap-8">
+<div class="space-y-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-4xl">payments</span>
+<h4 class="font-bold text-lg">Renda e Gastos</h4>
+<p class="text-sm text-slate-400">Identificação de desperdícios e potencial de poupança.</p>
+</div>
+<div class="space-y-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-4xl">receipt_long</span>
+<h4 class="font-bold text-lg">Dívidas</h4>
+<p class="text-sm text-slate-400">Análise de juros e oportunidades de refinanciamento.</p>
+</div>
+<div class="space-y-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-4xl">trending_up</span>
+<h4 class="font-bold text-lg">Investimentos</h4>
+<p class="text-sm text-slate-400">Eficiência da carteira vs. inflação.</p>
+</div>
+<div class="space-y-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-4xl">verified</span>
+<h4 class="font-bold text-lg">Oportunidades</h4>
+<p class="text-sm text-slate-400">Novas fontes de crédito e benefícios fiscais.</p>
+</div>
+</div>
+<button class="bg-gradient-growth text-white px-10 py-5 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-tertiary/30 transition-all active:scale-95">
+                            Iniciar diagnóstico financeiro
+                        </button>
+</div>
+<div class="relative group">
+<div class="absolute inset-0 bg-white/5 rounded-3xl blur-2xl group-hover:bg-white/10 transition-colors"></div>
+<div class="relative glass-panel bg-white/5 p-12 rounded-[2rem] border border-white/10 space-y-8">
+<div class="flex items-center gap-6">
+<div class="w-20 h-20 bg-tertiary-fixed-dim/20 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-fixed text-4xl">psychology</span>
+</div>
+<div>
+<div class="text-slate-400 text-sm font-bold uppercase">Resultado do teste</div>
+<div class="text-3xl font-headline font-bold">Nível: Moderado</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="p-6 bg-white/5 rounded-2xl border border-white/5">
+<div class="flex justify-between mb-4">
+<span class="font-bold text-slate-300">Saúde de Crédito</span>
+<span class="text-tertiary-fixed font-bold">92%</span>
+</div>
+<div class="h-1.5 bg-white/10 rounded-full">
+<div class="w-[92%] h-full bg-tertiary-fixed"></div>
+</div>
+</div>
+<div class="p-6 bg-white/5 rounded-2xl border border-white/5">
+<div class="flex justify-between mb-4">
+<span class="font-bold text-slate-300">Otimização de Gastos</span>
+<span class="text-primary-fixed font-bold">64%</span>
+</div>
+<div class="h-1.5 bg-white/10 rounded-full">
+<div class="w-[64%] h-full bg-primary-fixed"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cote Finance AI Section -->
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+<div class="flex-1 order-2 lg:order-1">
+<img class="rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-white" data-alt="ultra-modern minimalist AI financial dashboard interface with clean data visualizations and soft purple glow on light gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIB9_WKai_5QLcsAsXEqpYOwD-_Mnqw8ZAJaF5eDb8l2UIvK3rYxoz6UnQ0_LeTZaD5jDbkqTE53VRXXH0DBjlBAOAeKANl7FH7JqXfNTUESQUEwgT86nT-x2zHd_OgufxhKTgEgw0lM0RObYo7i52ndYfVKuVb7J7f7WGTGRDNElD4XvZGMMKBkdUp9WJr9UJtS3Pd-zsB1y0PgCJEJQpIMhC6N8Cr3quXG51cp0WYefvY4CRwPQjUubNfZ_VoC9mJZA1K8IIzwk"/>
+</div>
+<div class="flex-1 space-y-10 order-1 lg:order-2">
+<h2 class="text-5xl lg:text-6xl font-headline font-black leading-tight">Veja sua vida financeira com inteligência artificial.</h2>
+<p class="text-xl text-outline leading-relaxed">Não perca mais tempo tentando decifrar extratos. Nossa IA processa seus dados em segundos, identifica padrões e sugere o próximo movimento antes mesmo de você perceber a necessidade.</p>
+<div class="space-y-6">
+<div class="flex gap-6 items-start">
+<span class="material-symbols-outlined text-secondary text-3xl">auto_awesome</span>
+<div>
+<h4 class="font-bold text-xl">Predição de fluxo de caixa</h4>
+<p class="text-outline">Saiba exatamente quanto terá disponível daqui a 3 meses.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="material-symbols-outlined text-secondary text-3xl">smart_toy</span>
+<div>
+<h4 class="font-bold text-xl">Chatbot Consultivo</h4>
+<p class="text-outline">Pergunte: "Posso comprar este carro agora?" e receba uma análise técnica.</p>
+</div>
+</div>
+</div>
+<button class="bg-on-surface text-surface px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl">
+                        Criar conta gratuita
+                    </button>
+</div>
+</div>
+</section>
+<!-- Conteúdo (Editorial) -->
+<section class="py-32 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div class="space-y-4">
+<h2 class="text-4xl font-headline font-extrabold tracking-tight">Cote Editorial</h2>
+<p class="text-outline">Educação financeira com rigor técnico e linguagem clara.</p>
+</div>
+<button class="bg-surface-container-lowest border border-outline-variant/30 px-6 py-3 rounded-full font-bold hover:bg-white transition-all">Explorar Biblioteca</button>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Article 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[16/10] overflow-hidden rounded-2xl mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="professional photo of minimalist workspace with high-end laptop and architectural blueprints under soft natural window light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4DsNXk-115fLDsBfM7tLqKbRCp0BrUfGlG-fQ8KnJNUNzOjpaolBsbbXT7vu1TMlLrMVktYCwRV8zmcdSrApGcgeWkkccILyh0xqJA5itSZcLtj8nmmfJSHZZtIIZ4mfzxgD43Wt0YdFpOUBPgtyTchudxmQX9zjmsHS_gP69gNuhwjUQaTMMVo6GwMkAadnYRbc796_msvjmMBkXgA7yZUILJSFcAgQVKb-srVy6JqVw5d22lfVABPjKYTBFpW3Qxj6wmWRO4Fo"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-primary">Estratégia</div>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">Como o Refinanciamento de Imóveis pode ser sua Alavanca em 2024</h3>
+<div class="flex items-center gap-4 text-sm text-outline font-medium">
+<span>Marcos Valente</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span>8 min de leitura</span>
+</div>
+</div>
+<!-- Article 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[16/10] overflow-hidden rounded-2xl mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="macro photograph of crystalline structures reflecting blue and violet light in a sharp technological aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF23bUBC84C7C_DmlPor87zTsDx1IM1r7cnanLOyQQZfrgGBR0JsBJsI_TQqcKWwtT53iHC-LYDJj6AVaKQEjan7IRKIQ0YWKwExIZkp-c7VBpZFPpZYgN5z7YxSnzYhDfPt6j-j1S_JEywtd7Kb79pom15e8tEJyXY4ra_NdZHeOvazx5-TRBRV1H6fesBhy2K5cg9f3X3nRTIwtcpmS86HWS5NY9h4A-1LVvSdI5V1t9Oh3pIbxfX4OmjVz9lG3on6l63uMBLMg"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-secondary">Inovação</div>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">O Impacto da IA Generativa na Gestão de Patrimônio Pessoal</h3>
+<div class="flex items-center gap-4 text-sm text-outline font-medium">
+<span>Ana Paula Costa</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span>5 min de leitura</span>
+</div>
+</div>
+<!-- Article 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[16/10] overflow-hidden rounded-2xl mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="aerial view of a modern bridge at dawn symbolizing connection and financial progress in soft blue and orange hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMYKhAl_zhW3YeucBOx8u3HYuxz4KXGj3jDRobGezh3RY5lexKhQYCdY2alvi1yLZZwO6eiWopZIUewBNL0bBkCd27WN1ns-7jyL83WYxAYvGyXPbQRZh15iyFQqkDQq-BiZ_0G97w6OkH5K5PueRWksIUkXH8Q_Aar4DOFf0hPDoCEXHsWJZ6ndNsZm5OGXJEzYilbjvclo8w8ug7XoBI4jIbAqdGMJBoHGm3prG0VSv1lRymColqhmq0sHGuwxCrC3-kOJIHe40"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-tertiary">Mercado</div>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">Taxa Selic: O Guia Definitivo para o Investidor Moderado</h3>
+<div class="flex items-center gap-4 text-sm text-outline font-medium">
+<span>Equipe Editorial</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span>12 min de leitura</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full pt-20 pb-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 px-8 max-w-7xl mx-auto">
+<div class="col-span-2 lg:col-span-1">
+<div class="text-xl font-black text-slate-900 dark:text-white mb-6">Cote Juros</div>
+<p class="text-slate-500 text-sm leading-relaxed mb-8">Elevando o padrão da curadoria financeira global através de tecnologia e clareza.</p>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-slate-600 text-xl">share</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-slate-600 text-xl">public</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h5 class="text-on-background font-bold text-sm uppercase tracking-widest">Produtos</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Comparison</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Tools</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Products</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-on-background font-bold text-sm uppercase tracking-widest">Editorial</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Blog</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Guides</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Market Analysis</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-on-background font-bold text-sm uppercase tracking-widest">Legal</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-on-background font-bold text-sm uppercase tracking-widest">Suporte</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Help Center</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-20 pt-8 border-t border-slate-200">
+<p class="text-slate-500 text-sm text-center">© 2024 Cote Juros. The Financial Curator. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

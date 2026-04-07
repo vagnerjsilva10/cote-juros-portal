@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hub de Ferramentas | Cote Juros</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#00201c",
+                        "primary-container": "#0f62fe",
+                        "surface-variant": "#dce2f6",
+                        "surface-bright": "#f9f9ff",
+                        "outline-variant": "#c3c6d8",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2a3040",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-fixed": "#00174c",
+                        "primary": "#004ccd",
+                        "on-surface-variant": "#424656",
+                        "tertiary-container": "#007e71",
+                        "surface-container-low": "#f1f3ff",
+                        "secondary": "#712ae2",
+                        "on-secondary-fixed": "#25005a",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9ff",
+                        "surface-dim": "#d3daee",
+                        "secondary-container": "#8a4cfc",
+                        "on-surface": "#151b2a",
+                        "tertiary-fixed": "#71f8e4",
+                        "surface-tint": "#0052dd",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container": "#e9edff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed-variant": "#005048",
+                        "on-tertiary-container": "#ccfff5",
+                        "outline": "#737687",
+                        "surface": "#f9f9ff",
+                        "on-primary-container": "#f3f3ff",
+                        "secondary-fixed": "#eaddff",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "inverse-on-surface": "#edf0ff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#151b2a",
+                        "surface-container-high": "#e2e8fc",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "tertiary-fixed-dim": "#4fdbc8",
+                        "tertiary": "#006358",
+                        "surface-container-highest": "#dce2f6",
+                        "on-primary-fixed-variant": "#003da9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #004ccd, #712ae2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #004ccd 0%, #712ae2 100%);
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 glass-header shadow-2xl shadow-slate-900/5">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-2xl font-black tracking-tighter text-slate-900">
+                Cote Juros
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-blue-700 font-bold border-b-2 border-blue-600 pb-1" href="#">Ferramentas</a>
+<a class="text-slate-500 font-medium pb-1 hover:text-blue-600 transition-colors duration-300" href="#">Comparadores</a>
+<a class="text-slate-500 font-medium pb-1 hover:text-blue-600 transition-colors duration-300" href="#">Sobre</a>
+<a class="text-slate-500 font-medium pb-1 hover:text-blue-600 transition-colors duration-300" href="#">Editorial</a>
+<a class="text-slate-500 font-medium pb-1 hover:text-blue-600 transition-colors duration-300" href="#">AI Platform</a>
+</div>
+<button class="bg-gradient-primary text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-tight scale-95 active:scale-90 transition-transform">
+                Diagnostic
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="pt-40 pb-24 px-8 max-w-7xl mx-auto text-center">
+<div class="inline-flex items-center gap-2 bg-primary-fixed px-4 py-1.5 rounded-full mb-8">
+<span class="material-symbols-outlined text-sm text-primary">verified</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-primary-fixed">Curadoria Especializada</span>
+</div>
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl tracking-tight mb-8 leading-[1.1]">
+            Ferramentas que <span class="text-gradient">simplificam</span> o complexo.
+        </h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
+            Decisões financeiras exigem clareza. Use nossos simuladores de alta precisão para visualizar seu futuro financeiro com absoluta confiança.
+        </p>
+<div class="flex flex-wrap justify-center gap-4">
+<div class="flex items-center gap-4 bg-surface-container-low px-6 py-3 rounded-2xl">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-surface" data-alt="professional man in business attire looking confident and friendly portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy9oZ3rTulWjDVRl4gWs44azSysPp_Zvr7F6i6nataCFGURFjcllrNw-1TAr6Cr_38Wl8pnWC9_29muoDs6pck4tFU3GLKGFdWLmGFmAvL0303mdWl51KEcNxm6PulIGziKbZ7U73GcOmoIkBlWsP15BPdk_a9mKxE-sMTKmgNCEv4tcNwQhte6ksSNz-Cxhtw6dRuu8ePzjYu5g3mTSAk7FLg8FDKvIClT8H2Z1HtIn8G7BTxA6lVj4QNKlJj-fjFFNkYlOYVuqw"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface" data-alt="successful businesswoman smiling in a bright office environment portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgRh7oqFW13t0gm5ItkIp0fKxBfmkxRauJyHV7900MKmINc7H-DEkxNdpu509bBxkVIhzzr3V3_Wq8CAPVnEElKAR9jSX1a5qaIZd7UpaxY0YDNl-O54ynnNpwpj-f8GIMgNBQ6PdScBGi2YjIx0DlHiW2qop1dYlhfb72yWzmN_04lo9MXFyZK3hshS3kxdRkFySkGo9p6jR9II8N04KKmUvy7EOttO-iUqY4BrAiPKJvasjN3bsGuBuIj4HaRWL4BYgKhY8sZM8"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface" data-alt="executive male professional with a clean modern look portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHZxbJB48XoIsV6GwcfI9Lvh9aekBJCbepxS-EBpWqlBdcJGseC3rPLGzmMKdh4W8wLqjbZvTgh_R-u06z370ZhkT794JlhY94FOPEaGnglaBE5GW-asNaQahdB9F4viohNlzNa2b8vRVeWOSznwD0t19pZbdShbH7iTbV5gr_P_NcF27wHJujSitfwhuvUNXhPBFdRYJZpE7Qqp6hOXMnF0rFXDbJ35jHSKq_cQao7CBOid7-C19b50hxlElXOdTykBYGqKT6mic"/>
+</div>
+<p class="text-sm font-semibold text-on-surface-variant">Mais de 120 mil brasileiros já simplificaram suas finanças</p>
+</div>
+</div>
+</header>
+<!-- Main Tools Grid -->
+<section class="px-8 pb-32 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Tool Card: Juros Compostos -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-2xl shadow-slate-900/5 group">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-primary-fixed w-12 h-12 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+</div>
+<span class="text-primary font-bold text-xs bg-primary-fixed px-3 py-1 rounded-full uppercase">Investimento</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-3">Calculadora de Juros Compostos</h3>
+<p class="text-on-surface-variant mb-8 text-sm leading-relaxed">
+                    Descubra o poder do tempo sobre o seu dinheiro. Visualize o crescimento exponencial do seu patrimônio com projeções reais.
+                </p>
+<div class="bg-surface-container-low rounded-xl p-4 mb-8">
+<div class="flex items-end gap-1 h-20">
+<div class="flex-1 bg-primary-container/20 rounded-t-sm h-1/4"></div>
+<div class="flex-1 bg-primary-container/30 rounded-t-sm h-2/4"></div>
+<div class="flex-1 bg-primary-container/50 rounded-t-sm h-3/4"></div>
+<div class="flex-1 bg-primary-container rounded-t-sm h-full"></div>
+</div>
+</div>
+<button class="w-full bg-surface-container px-6 py-4 rounded-xl font-bold text-primary group-hover:bg-gradient-primary group-hover:text-white transition-all duration-300">
+                    Usar ferramenta
+                </button>
+</div>
+<!-- Tool Card: Empréstimo -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-2xl shadow-slate-900/5 group">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-tertiary-fixed w-12 h-12 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="payments">payments</span>
+</div>
+<span class="text-tertiary font-bold text-xs bg-tertiary-fixed px-3 py-1 rounded-full uppercase">Crédito</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-3">Calculadora de Empréstimo</h3>
+<p class="text-on-surface-variant mb-8 text-sm leading-relaxed">
+                    Saiba exatamente quanto você pagará por mês. Compare taxas de juros e encontre a melhor opção de parcelamento.
+                </p>
+<div class="bg-surface-container-low rounded-xl p-6 mb-8 flex flex-col gap-3">
+<div class="h-2 w-full bg-outline-variant/30 rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-2/3"></div>
+</div>
+<div class="flex justify-between text-[10px] font-bold text-outline">
+<span>R$ 1.000</span>
+<span>R$ 50.000</span>
+</div>
+</div>
+<button class="w-full bg-surface-container px-6 py-4 rounded-xl font-bold text-primary group-hover:bg-gradient-primary group-hover:text-white transition-all duration-300">
+                    Usar ferramenta
+                </button>
+</div>
+<!-- Tool Card: Cartão de Crédito -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-2xl shadow-slate-900/5 group">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-secondary-fixed w-12 h-12 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="credit_card">credit_card</span>
+</div>
+<span class="text-secondary font-bold text-xs bg-secondary-fixed px-3 py-1 rounded-full uppercase">Cartões</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-3">Simulador de Cartão de Crédito</h3>
+<p class="text-on-surface-variant mb-8 text-sm leading-relaxed">
+                    Compare os benefícios, anuidades e taxas de diferentes cartões. Encontre o cartão ideal para o seu perfil de gasto.
+                </p>
+<div class="bg-surface-container-low rounded-xl p-4 mb-8 flex items-center justify-center">
+<div class="w-32 h-20 bg-gradient-to-br from-secondary to-primary rounded-lg shadow-lg rotate-12 flex flex-col justify-end p-2">
+<div class="w-4 h-3 bg-yellow-400/50 rounded-sm mb-2"></div>
+<div class="h-1 w-12 bg-white/30 rounded-full"></div>
+</div>
+</div>
+<button class="w-full bg-surface-container px-6 py-4 rounded-xl font-bold text-primary group-hover:bg-gradient-primary group-hover:text-white transition-all duration-300">
+                    Usar ferramenta
+                </button>
+</div>
+<!-- Tool Card: Financiamento -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-2xl shadow-slate-900/5 group lg:col-span-2">
+<div class="grid md:grid-cols-2 gap-8">
+<div>
+<div class="bg-primary-fixed w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="house">house</span>
+</div>
+<h3 class="font-headline font-bold text-3xl mb-4">Simulador de Financiamento</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                            Planeje a compra do seu imóvel ou veículo. Analise sistemas SAC e PRICE e veja o impacto total dos juros no longo prazo.
+                        </p>
+<button class="hidden md:block w-fit bg-surface-container px-10 py-4 rounded-xl font-bold text-primary group-hover:bg-gradient-primary group-hover:text-white transition-all duration-300">
+                            Usar ferramenta
+                        </button>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-6 flex flex-col justify-center">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-on-surface-variant">Valor do Imóvel</span>
+<span class="text-lg font-bold">R$ 450.000</span>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-on-surface-variant">Entrada (20%)</span>
+<span class="text-lg font-bold">R$ 90.000</span>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-on-surface-variant">Parcelas</span>
+<span class="text-lg font-bold text-primary">360x R$ 3.245</span>
+</div>
+</div>
+</div>
+<button class="md:hidden w-full bg-surface-container px-6 py-4 rounded-xl font-bold text-primary group-hover:bg-gradient-primary group-hover:text-white transition-all duration-300">
+                        Usar ferramenta
+                    </button>
+</div>
+</div>
+<!-- Tool Card: Parcelamento -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-2xl shadow-slate-900/5 group">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-outline-variant/20 w-12 h-12 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface" data-icon="splitscreen">splitscreen</span>
+</div>
+<span class="text-outline font-bold text-xs bg-outline-variant/20 px-3 py-1 rounded-full uppercase">Consumo</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-3">Simulador de Parcelamento</h3>
+<p class="text-on-surface-variant mb-8 text-sm leading-relaxed">
+                    Vale a pena pagar à vista com desconto ou parcelar? Use nossa lógica de custo de oportunidade para decidir.
+                </p>
+<div class="bg-surface-container-low rounded-xl p-4 mb-8 grid grid-cols-2 gap-2">
+<div class="bg-surface-container-lowest p-2 rounded-lg text-center">
+<span class="block text-[10px] text-outline uppercase font-bold">À Vista</span>
+<span class="text-sm font-bold text-tertiary">-10%</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg text-center border-2 border-primary">
+<span class="block text-[10px] text-outline uppercase font-bold">12x</span>
+<span class="text-sm font-bold text-primary">Fixas</span>
+</div>
+</div>
+<button class="w-full bg-surface-container px-6 py-4 rounded-xl font-bold text-primary group-hover:bg-gradient-primary group-hover:text-white transition-all duration-300">
+                    Usar ferramenta
+                </button>
+</div>
+</div>
+</section>
+<!-- Recommended Articles Section -->
+<section class="bg-surface-container-low py-24 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline font-bold text-3xl mb-4">Artigos recomendados</h2>
+<p class="text-on-surface-variant">Aprofunde seu conhecimento com nossa curadoria editorial.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 group" href="#">
+                    Ver todo editorial 
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Article 1 -->
+<div class="group cursor-pointer">
+<div class="rounded-2xl overflow-hidden mb-6 aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="high quality financial graph on a clean tablet screen with elegant bokeh lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxLelkQJr4hlnQvEb-4yzarqymw8s9mFlYP113Ia9L3jR4xK_SSn6gKYXOna2p-IZKRRAao_3daIYjgz6OFPlMkW4e61LjRIO4VR3qWvfSe-oaf4gcNfmoSXvXsi2hijq3RtPChGPG8pSrfP2D45pW5kVckT_KxklcZbajRcatIGF9apRqwDpkAmw3zPxZ6g8lN226gVeEtqWZMqIyp8fRW4HWVgVWEuiT4DA4BpwMJantuqczxqSJjwffsB94BbsJJ3QyZzwBStA"/>
+</div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-3 block">Educação Financeira</span>
+<h4 class="font-headline font-bold text-xl leading-snug group-hover:text-primary transition-colors">Como o efeito dos juros compostos pode acelerar sua aposentadoria</h4>
+</div>
+<!-- Article 2 -->
+<div class="group cursor-pointer">
+<div class="rounded-2xl overflow-hidden mb-6 aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="architectural shot of a modern clean white residential building with sharp shadows and clear sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgnCGMzHXkYtExV0p_c9VBsMlGyUY0VTEZvYoBcXnTg404R8mDR-X6xjBZ0-d5lcoGFWtg4O-c4xXkg_DXfHc2o3OZ8JYUyubfJdhXov8ecDCG8PdHOlZ5Z99TfLf7LVM4mAgV4hENsAjiMdUEPIdu2O8hfYa60PnUEaCpmLyVDq45Iv4KNk_Hd8wqr1P2HMcTYAGsqHXgivylmxPBsrrG0uQDKC4A9VY-U0Mh9TtPkwJsiTL2bE8sLS5QXyJCAr7l2JAS3fyKqEE"/>
+</div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-3 block">Financiamento</span>
+<h4 class="font-headline font-bold text-xl leading-snug group-hover:text-primary transition-colors">SAC ou PRICE: Qual a melhor tabela para financiar seu primeiro imóvel?</h4>
+</div>
+<!-- Article 3 -->
+<div class="group cursor-pointer">
+<div class="rounded-2xl overflow-hidden mb-6 aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close up of premium metallic credit cards neatly stacked on a dark stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmB19onXfbr22JQ5biQd387ipTOSPBSSRh8pchvdYMF1qE0X9FTa_KLF67xh34xId_8m4ioY4xmbeM7NfN5p5tDmmAIw-nw8Vi66oFdQ3-D_f6r_kLf6FNtkUiqyqEq7rotsgUhm5qpp7YK8UVRTN24PKqfVQviuqViZ091qbdPRlL4SVVnswsx8fl-Zrvil0qZgSzcfd_clV3YvzHovmdYdWiDqT5SFPzgtm6mPWwmSoRn8T5igcsGJBJmHhCjHbt_vWcD7jvXB8"/>
+</div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-3 block">Cartões</span>
+<h4 class="font-headline font-bold text-xl leading-snug group-hover:text-primary transition-colors">Guia definitivo: Como escolher o cartão de crédito com melhor cashback</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Conversion Section -->
+<section class="py-24 px-8">
+<div class="max-w-5xl mx-auto bg-on-surface rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden">
+<!-- Decorative Elements -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary blur-[100px] opacity-20 -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary blur-[100px] opacity-20 -ml-32 -mb-32"></div>
+<h2 class="font-headline font-extrabold text-4xl md:text-5xl text-white mb-8 relative z-10">
+                Pronto para transformar sua realidade financeira?
+            </h2>
+<p class="text-outline text-lg mb-12 max-w-2xl mx-auto relative z-10">
+                Obtenha uma análise personalizada do seu perfil e descubra onde você pode economizar e investir melhor hoje mesmo.
+            </p>
+<button class="bg-gradient-primary text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform relative z-10">
+                Iniciar diagnóstico financeiro
+            </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-50 w-full pt-20 pb-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 px-8 max-w-7xl mx-auto">
+<div class="col-span-2 lg:col-span-1">
+<div class="text-xl font-black text-slate-900 mb-6">Cote Juros</div>
+<p class="text-slate-500 text-sm leading-relaxed mb-8">
+                    The Financial Curator. Decisões inteligentes baseadas em dados e transparência.
+                </p>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6 text-sm uppercase tracking-widest">Produtos</h5>
+<ul class="space-y-4 text-sm font-inter tracking-wide">
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Cartões</a></li>
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Empréstimos</a></li>
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Financiamento</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6 text-sm uppercase tracking-widest">Recursos</h5>
+<ul class="space-y-4 text-sm font-inter tracking-wide">
+<li><a class="text-blue-600 font-semibold" href="#">Calculadoras</a></li>
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Simuladores</a></li>
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Comparadores</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6 text-sm uppercase tracking-widest">Conteúdo</h5>
+<ul class="space-y-4 text-sm font-inter tracking-wide">
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Editorial</a></li>
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6 text-sm uppercase tracking-widest">Newsletter</h5>
+<p class="text-xs text-slate-500 mb-4">Receba insights financeiros semanais.</p>
+<div class="flex bg-white rounded-lg p-1 border border-outline-variant/30">
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full px-2" placeholder="Email" type="email"/>
+<button class="bg-primary text-white p-2 rounded-md">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-20 pt-10 border-t border-outline-variant/10 text-center">
+<p class="text-slate-500 text-sm tracking-wide">
+                © 2024 Cote Juros. The Financial Curator. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>
