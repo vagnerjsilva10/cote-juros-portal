@@ -70,7 +70,7 @@ export const comparatorCards: ComparatorCard[] = [
       { label: 'Anuidade', value: 'Gratis' }
     ],
     highlights: ['Acesso ilimitado VIP Lounge', 'Seguro viagem incluso', 'Concierge 24/7'],
-    cta: 'Solicitar cartao'
+    cta: 'Solicitar cartão'
   },
   {
     name: 'Nubank Ultravioleta',
@@ -81,8 +81,8 @@ export const comparatorCards: ComparatorCard[] = [
       { label: 'Cashback', value: '1.0%' },
       { label: 'Anuidade', value: 'R$ 49/mes' }
     ],
-    highlights: ['Cashback cresce com CDI', 'Cartao de metal exclusivo', 'Beneficios Mastercard Black'],
-    cta: 'Solicitar cartao'
+    highlights: ['Cashback cresce com CDI', 'Cartão de metal exclusivo', 'Beneficios Mastercard Black'],
+    cta: 'Solicitar cartão'
   }
 ];
 
@@ -98,7 +98,7 @@ export const comparatorDetailRows: ComparatorDetailRow[] = [
   {
     product: 'BTG Pactual Black',
     bank: 'BTG Pactual',
-    miles: 'Ate 2.2 pts',
+    miles: 'Até 2.2 pts',
     scoreLabel: '700+',
     scoreFill: 70,
     status: 'ativo'

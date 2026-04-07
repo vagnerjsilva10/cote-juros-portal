@@ -1,4 +1,14 @@
+﻿import Link from 'next/link';
+
 import { comparatorGroups } from '@/data/homepage';
+
+function comparatorHref(title: string) {
+  if (title.toLowerCase().includes('empréstimo')) {
+    return '/emprestimos';
+  }
+
+  return '/cartoes-de-credito';
+}
 
 export function ComparatorsSection() {
   return (
@@ -9,7 +19,7 @@ export function ComparatorsSection() {
             <h2>Comparadores em destaque</h2>
             <p>Atualizado hoje com as melhores taxas do mercado brasileiro.</p>
           </div>
-          <a href="#">Ver todos</a>
+          <Link href="/comparador-interativo">Ver todos</Link>
         </div>
 
         <div className="comparators-grid">
@@ -29,7 +39,7 @@ export function ComparatorsSection() {
                   </div>
                 ))}
               </div>
-              <button type="button">{group.cta}</button>
+              <Link href={comparatorHref(group.title)}>{group.cta}</Link>
             </article>
           ))}
         </div>

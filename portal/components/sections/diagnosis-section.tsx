@@ -1,25 +1,27 @@
+﻿import Link from 'next/link';
+
 import { Icon } from '@/components/icon';
 
 const diagnosisPoints = [
   {
     icon: 'payments',
     title: 'Renda e gastos',
-    description: 'Identificacao de desperdicios e potencial de poupanca.'
+    description: 'Identificação de desperdícios e potencial de poupança.'
   },
   {
     icon: 'receipt_long',
-    title: 'Dividas',
-    description: 'Analise de juros e oportunidades de refinanciamento.'
+    title: 'Dívidas',
+    description: 'Análise de juros e oportunidades de refinanciamento.'
   },
   {
     icon: 'trending_up',
     title: 'Investimentos',
-    description: 'Eficiencia da carteira versus inflacao e metas.'
+    description: 'Eficiência da carteira versus inflação e metas.'
   },
   {
     icon: 'verified',
     title: 'Oportunidades',
-    description: 'Novas fontes de credito e ganhos fiscais possiveis.'
+    description: 'Novas fontes de crédito e ganhos fiscais possíveis.'
   }
 ];
 
@@ -28,11 +30,11 @@ export function DiagnosisSection() {
     <section className="section-dark section-spaced">
       <div className="container diagnosis-grid">
         <div>
-          <span className="badge">Premium Service</span>
+          <span className="badge">Serviço Premium</span>
           <h2>Mapeamos seu futuro financeiro.</h2>
           <p>
-            Nosso diagnostico proprietario analisa quatro pilares criticos para sugerir
-            otimizacoes imediatas e sustentaveis.
+            Nosso diagnóstico proprietário analisa quatro pilares críticos para sugerir otimizações
+            imediatas e sustentáveis.
           </p>
           <div className="diagnosis-points">
             {diagnosisPoints.map((point) => (
@@ -43,16 +45,16 @@ export function DiagnosisSection() {
               </article>
             ))}
           </div>
-          <button className="btn btn-accent" type="button">
-            Iniciar diagnostico financeiro
-          </button>
+          <Link className="btn btn-accent" href="/diagnostico-financeiro">
+            Iniciar diagnóstico financeiro
+          </Link>
         </div>
 
         <aside className="diagnosis-card">
-          <h3>Nivel: Moderado</h3>
+          <h3>Nível: Moderado</h3>
           <div>
             <div>
-              <span>Saude de credito</span>
+              <span>Saúde de crédito</span>
               <strong>92%</strong>
             </div>
             <div className="bar">
@@ -61,7 +63,7 @@ export function DiagnosisSection() {
           </div>
           <div>
             <div>
-              <span>Otimizacao de gastos</span>
+              <span>Otimização de gastos</span>
               <strong>64%</strong>
             </div>
             <div className="bar">

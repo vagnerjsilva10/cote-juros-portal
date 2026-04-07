@@ -38,7 +38,7 @@ export const rankedCards: RankedCard[] = [
     stars: 5,
     name: 'Infinite Rewards Elite',
     description:
-      'Cartao premium para quem busca 3% de cashback em todas as compras e acesso a salas VIP globais.',
+      'Cartão premium para quem busca 3% de cashback em todas as compras e acesso a salas VIP globais.',
     metrics: [
       { label: 'Cashback', value: '3.0%' },
       { label: 'Anuidade', value: 'Gratis*' },

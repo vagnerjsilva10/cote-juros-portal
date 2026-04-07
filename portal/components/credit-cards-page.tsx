@@ -1,4 +1,5 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
+import Link from 'next/link';
 
 import { Icon } from '@/components/icon';
 import { SiteFooter } from '@/components/site-footer';
@@ -25,17 +26,17 @@ export function CreditCardsPage() {
             <div>
               <span className="eyebrow">Editorial Selection 2026</span>
               <h1>
-                A arte de escolher o seu <span>proximo cartao.</span>
+                A arte de escolher o seu <span>próximo cartão.</span>
               </h1>
               <p>
-                Nossa curadoria decompoe taxas e beneficios para encontrar o cartao ideal para sua
-                estrategia de patrimonio.
+                Nossa curadoria decompõe taxas e benefícios para encontrar o cartão ideal para sua
+                estratégia de patrimônio.
               </p>
             </div>
             <div className="cc-hero-media">
               <Image
                 src="https://images.unsplash.com/photo-1548427721-7f8d7f7a9d18?auto=format&fit=crop&w=1200&q=80"
-                alt="Cartoes de credito premium sobre mesa escura"
+                alt="Cartões de crédito premium sobre mesa escura"
                 width={1280}
                 height={960}
               />
@@ -46,13 +47,13 @@ export function CreditCardsPage() {
         <section className="cc-filters">
           <div className="container cc-filter-wrap">
             {creditFilters.map((filter) => (
-              <button
+              <Link
                 key={filter.label}
+                href="/cartoes-de-credito"
                 className={filter.active ? 'cc-filter active' : 'cc-filter'}
-                type="button"
               >
                 {filter.label}
-              </button>
+              </Link>
             ))}
           </div>
         </section>
@@ -62,7 +63,7 @@ export function CreditCardsPage() {
             <div className="section-head">
               <div>
                 <h2>O Ranking de Elite</h2>
-                <p>Baseado em custo-beneficio, recompensas e aceitacao.</p>
+                <p>Baseado em custo-benefício, recompensas e aceitação.</p>
               </div>
               <strong>Atualizado em 7 de abril de 2026</strong>
             </div>
@@ -96,12 +97,12 @@ export function CreditCardsPage() {
                   </div>
 
                   <div className="cc-card-action">
-                    <button
+                    <Link
                       className={card.ctaStyle === 'outline' ? 'btn btn-outline' : 'btn btn-primary'}
-                      type="button"
+                      href="/comparador-interativo"
                     >
                       {card.ctaLabel}
-                    </button>
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -111,15 +112,15 @@ export function CreditCardsPage() {
 
         <section className="cc-table section-spaced section-muted">
           <div className="container">
-            <h2>Comparativo Tecnico</h2>
+            <h2>Comparativo Técnico</h2>
             <div className="cc-table-wrap">
               <table>
                 <thead>
                   <tr>
-                    <th>Cartao</th>
+                    <th>Cartão</th>
                     <th>Juros rotativo</th>
                     <th>Taxa de saque</th>
-                    <th>Beneficio-chave</th>
+                    <th>Benefício-chave</th>
                     <th>Anuidade</th>
                   </tr>
                 </thead>
@@ -144,15 +145,15 @@ export function CreditCardsPage() {
             <article className="cc-education-main">
               <h3>O erro que 80% dos brasileiros cometem</h3>
               <p>
-                Pagar o minimo da fatura parece simples, mas acelera o crescimento da divida no
+                Pagar o mínimo da fatura parece simples, mas acelera o crescimento da dívida no
                 rotativo. Entenda como reduzir esse risco antes que ele comprometa seu fluxo.
               </p>
-              <a href="#">Ler guia completo</a>
+              <Link href="/editorial-artigo">Ler guia completo</Link>
             </article>
 
             <article className="cc-checklist">
               <Icon name="verified" className="cc-check-icon" />
-              <h3>Checklist da aprovacao</h3>
+              <h3>Checklist da aprovação</h3>
               <ul>
                 {approvalChecklist.map((item) => (
                   <li key={item}>
@@ -168,14 +169,14 @@ export function CreditCardsPage() {
         <section className="cc-cta section-spaced">
           <div className="container">
             <div className="cc-cta-box">
-              <h2>Nao sabe qual escolher?</h2>
+              <h2>Não sabe qual escolher?</h2>
               <p>
-                Responda 5 perguntas e nosso algoritmo sugere o cartao mais aderente ao seu estilo
+                Responda 5 perguntas e nosso algoritmo sugere o cartão mais aderente ao seu estilo
                 de vida e metas financeiras.
               </p>
-              <button className="btn btn-light" type="button">
-                Iniciar diagnostico gratuito
-              </button>
+              <Link className="btn btn-light" href="/diagnostico-financeiro">
+                Iniciar diagnóstico gratuito
+              </Link>
               <small>Leva menos de 2 minutos</small>
             </div>
           </div>
@@ -185,4 +186,3 @@ export function CreditCardsPage() {
     </>
   );
 }
-

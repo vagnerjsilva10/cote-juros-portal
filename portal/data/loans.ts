@@ -14,8 +14,8 @@ export type LoanInstitution = {
 export const loanIntents: LoanIntent[] = [
   {
     icon: "home",
-    title: "Emprestimo pessoal",
-    description: "Credito rapido para equilibrar caixa e manter sua estrategia."
+    title: "Empréstimo pessoal",
+    description: "Crédito rapido para equilibrar caixa e manter sua estratégia."
   },
   {
     icon: "warning",

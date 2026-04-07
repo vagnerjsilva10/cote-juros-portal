@@ -1,8 +1,9 @@
-import Image from "next/image";
+﻿import Image from 'next/image';
+import Link from 'next/link';
 
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { financingComparisonCards, financingFaq, financingRanking } from "@/data/financing";
+import { SiteFooter } from '@/components/site-footer';
+import { SiteHeader } from '@/components/site-header';
+import { financingComparisonCards, financingFaq, financingRanking } from '@/data/financing';
 
 export function FinanciamentoPage() {
   return (
@@ -13,18 +14,18 @@ export function FinanciamentoPage() {
           <div>
             <span>Editorial Especializado</span>
             <h1>
-              O Guia da Alavancagem <span>Imobiliaria</span>
+              O Guia da Alavancagem <span>Imobiliária</span>
             </h1>
             <p>
-              Curadoria com ranking de taxas e simuladores para decidir financiamento com criterio.
+              Curadoria com ranking de taxas e simuladores para decidir financiamento com critério.
             </p>
             <div>
-              <button className="btn btn-primary" type="button">
+              <Link className="btn btn-primary" href="/comparador-interativo">
                 Comparar taxas
-              </button>
-              <button className="btn btn-secondary" type="button">
+              </Link>
+              <Link className="btn btn-secondary" href="/financiamento#ranking">
                 Ver comparativo
-              </button>
+              </Link>
             </div>
           </div>
           <Image
@@ -47,11 +48,11 @@ export function FinanciamentoPage() {
           </div>
         </section>
 
-        <section className="container financing-ranking">
+        <section id="ranking" className="container financing-ranking">
           <div className="section-head">
             <div>
               <h2>Ranking de taxas</h2>
-              <p>As melhores condicoes com curadoria tecnica.</p>
+              <p>As melhores condições com curadoria técnica.</p>
             </div>
           </div>
           <div className="financing-rows">
@@ -66,12 +67,12 @@ export function FinanciamentoPage() {
                   <strong>{row.term}</strong>
                 </div>
                 <div>
-                  <span>Aprovacao</span>
+                  <span>Aprovação</span>
                   <strong>{row.approval}</strong>
                 </div>
-                <button className="btn btn-secondary" type="button">
+                <Link className="btn btn-secondary" href="/comparador-interativo">
                   Simular
-                </button>
+                </Link>
               </article>
             ))}
           </div>
@@ -79,30 +80,30 @@ export function FinanciamentoPage() {
 
         <section className="container financing-widget">
           <div>
-            <h2>Metricas que geram clareza financeira.</h2>
+            <h2>Métricas que geram clareza financeira.</h2>
             <p>
               Entenda impacto de entrada, taxa e prazo antes de assumir compromisso de longo ciclo.
             </p>
             <ul>
-              <li>Analise de CET imobiliario</li>
+              <li>Análise de CET imobiliário</li>
               <li>Comparativo SAC x PRICE</li>
-              <li>Sensibilidade por variacao de juros</li>
+              <li>Sensibilidade por variação de juros</li>
             </ul>
           </div>
           <aside>
-            <small>Valor do imovel</small>
+            <small>Valor do imóvel</small>
             <strong>R$ 450.000</strong>
             <div className="bar">
-              <span style={{ width: "52%" }} />
+              <span style={{ width: '52%' }} />
             </div>
-            <button className="btn btn-primary" type="button">
-              Ver simulacao detalhada
-            </button>
+            <Link className="btn btn-primary" href="/comparador-interativo">
+              Ver simulação detalhada
+            </Link>
           </aside>
         </section>
 
         <section className="container financing-articles">
-          <h2>Tudo o que voce precisa saber</h2>
+          <h2>Tudo o que você precisa saber</h2>
           <div>
             <article>
               <h3>Entrada de 20% reduz custo total?</h3>
@@ -113,28 +114,28 @@ export function FinanciamentoPage() {
               <p>Leitura em 8 min</p>
             </article>
             <article>
-              <h3>Portabilidade de credito com estrategia</h3>
+              <h3>Portabilidade de crédito com estratégia</h3>
               <p>Leitura em 5 min</p>
             </article>
           </div>
         </section>
 
         <section className="container financing-content-block">
-          <h3>Conteudo detalhado</h3>
+          <h3>Conteúdo detalhado</h3>
           <ol>
             <li>Taxa x disciplina de caixa</li>
-            <li>Amortizacao extraordinaria</li>
+            <li>Amortização extraordinária</li>
             <li>Quando alongar e quando reduzir prazo</li>
             <li>Checklist para primeira proposta</li>
           </ol>
         </section>
 
         <section className="container financing-faq">
-          <h3>Duvidas frequentes</h3>
+          <h3>Dúvidas frequentes</h3>
           {financingFaq.map((question) => (
             <details key={question}>
               <summary>{question}</summary>
-              <p>Resposta orientada por simulacoes e curadoria tecnica de risco.</p>
+              <p>Resposta orientada por simulações e curadoria técnica de risco.</p>
             </details>
           ))}
         </section>

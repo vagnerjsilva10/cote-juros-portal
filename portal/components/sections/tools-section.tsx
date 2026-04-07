@@ -1,9 +1,11 @@
+﻿import Link from 'next/link';
+
 import { Icon } from '@/components/icon';
 
 const toolFeatures = [
-  'Calculo real de CET (Custo Efetivo Total)',
+  'Cálculo real de CET (Custo Efetivo Total)',
   'Comparativo de juros compostos vs simples',
-  'Simulador de amortizacao de parcelas'
+  'Simulador de amortização de parcelas'
 ];
 
 export function ToolsSection() {
@@ -27,7 +29,7 @@ export function ToolsSection() {
         </div>
 
         <article className="simulator-card">
-          <h3>Simulador de emprestimo</h3>
+          <h3>Simulador de empréstimo</h3>
           <div className="slider-item">
             <div>
               <span>Valor desejado</span>
@@ -50,12 +52,11 @@ export function ToolsSection() {
             <small>Parcela estimada</small>
             <strong>R$ 1.245,50</strong>
           </div>
-          <button className="btn btn-dark" type="button">
+          <Link className="btn btn-dark" href="/emprestimos">
             Comparar taxas agora
-          </button>
+          </Link>
         </article>
       </div>
     </section>
   );
 }
-

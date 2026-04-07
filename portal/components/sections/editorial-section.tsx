@@ -1,4 +1,5 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
+import Link from 'next/link';
 
 import { editorialPosts } from '@/data/homepage';
 
@@ -9,16 +10,16 @@ export function EditorialSection() {
         <div className="section-head">
           <div>
             <h2>Cote Editorial</h2>
-            <p>Educacao financeira com rigor tecnico e linguagem clara.</p>
+            <p>Educação financeira com rigor técnico e linguagem clara.</p>
           </div>
-          <button className="btn btn-secondary" type="button">
+          <Link className="btn btn-secondary" href="/editorial-artigo">
             Explorar biblioteca
-          </button>
+          </Link>
         </div>
 
         <div className="editorial-grid">
           {editorialPosts.map((post) => (
-            <article key={post.title} className="editorial-card">
+            <Link key={post.title} href="/editorial-artigo" className="editorial-card">
               <div className="editorial-image">
                 <Image src={post.image} alt={post.title} width={900} height={560} />
                 <span>{post.category}</span>
@@ -27,11 +28,10 @@ export function EditorialSection() {
               <p>
                 {post.author} - {post.readTime}
               </p>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
     </section>
   );
 }
-

@@ -1,4 +1,4 @@
-import { EmprestimosPage } from "@/components/emprestimos-page";
+import { EmprestimosPage } from "@/components/empréstimos-page";
 
 export default function Page() {
   return <EmprestimosPage />;

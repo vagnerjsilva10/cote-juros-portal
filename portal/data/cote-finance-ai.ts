@@ -2,18 +2,18 @@ export const aiBentoCards = [
   {
     icon: "shield",
     title: "Seguranca inteligente",
-    description: "Criptografia, auditoria e protecao ativa do seu patrimonio digital."
+    description: "Criptografia, auditoria e protecao ativa do seu patrimônio digital."
   },
   {
     icon: "query_stats",
     title: "Insights em tempo real",
-    description: "Leitura automatica de fluxo de caixa e risco com alertas acionaveis.",
+    description: "Leitura automática de fluxo de caixa e risco com alertas acionáveis.",
     dark: true
   },
   {
     icon: "assistant",
     title: "Metas dinamicas",
-    description: "Simulacoes de cenarios com ajuste de rota a cada nova entrada."
+    description: "Simulações de cenarios com ajuste de rota a cada nova entrada."
   },
   {
     icon: "verified_user",
@@ -32,7 +32,7 @@ export const aiPricingPlans = [
   {
     name: "Premium",
     price: "R$ 29",
-    points: ["Analise proativa de taxas", "Roadmap financeiro anual", "Suporte humano + IA"],
+    points: ["Análise proativa de taxas", "Roadmap financeiro anual", "Suporte humano + IA"],
     featured: true
   }
 ];

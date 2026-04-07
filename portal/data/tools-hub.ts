@@ -22,31 +22,31 @@ export const toolCards: ToolCard[] = [
     categoryTone: 'primary',
     title: 'Calculadora de juros compostos',
     description:
-      'Visualize o crescimento do seu patrimonio com projecoes reais de longo prazo.'
+      'Visualize o crescimento do seu patrimônio com projecoes reais de longo prazo.'
   },
   {
     icon: 'payments',
-    category: 'Credito',
+    category: 'Crédito',
     categoryTone: 'tertiary',
-    title: 'Calculadora de emprestimo',
+    title: 'Calculadora de empréstimo',
     description:
       'Compare taxa efetiva e parcelas para encontrar o melhor custo total da operacao.'
   },
   {
     icon: 'credit_card',
-    category: 'Cartoes',
+    category: 'Cartões',
     categoryTone: 'secondary',
-    title: 'Simulador de cartao de credito',
+    title: 'Simulador de cartão de crédito',
     description:
-      'Compare cashback, anuidade e vantagens para selecionar o cartao ideal para seu perfil.'
+      'Compare cashback, anuidade e vantagens para selecionar o cartão ideal para seu perfil.'
   },
   {
     icon: 'house',
-    category: 'Patrimonio',
+    category: 'Patrimônio',
     categoryTone: 'primary',
     title: 'Simulador de financiamento',
     description:
-      'Analise cenarios SAC e PRICE com impacto total de juros e prazo no longo periodo.',
+      'Análise cenarios SAC e PRICE com impacto total de juros e prazo no longo periodo.',
     variant: 'wide',
     metrics: [
       { label: 'Valor do imovel', value: 'R$ 450.000' },
@@ -79,8 +79,8 @@ export const recommendedToolArticles: ToolArticle[] = [
       'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80'
   },
   {
-    category: 'Cartoes',
-    title: 'Guia de cashback: como escolher um cartao que realmente rende',
+    category: 'Cartões',
+    title: 'Guia de cashback: como escolher um cartão que realmente rende',
     image:
       'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80'
   }

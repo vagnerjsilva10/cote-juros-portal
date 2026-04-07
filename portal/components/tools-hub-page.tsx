@@ -1,4 +1,5 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
+import Link from 'next/link';
 
 import { Icon } from '@/components/icon';
 import { SiteFooter } from '@/components/site-footer';
@@ -26,8 +27,8 @@ export function ToolsHubPage() {
             Ferramentas que <span>simplificam</span> o complexo.
           </h1>
           <p>
-            Decisoes financeiras exigem clareza. Use nossos simuladores para visualizar seu futuro
-            financeiro com mais confianca.
+            Decisões financeiras exigem clareza. Use nossos simuladores para visualizar seu futuro
+            financeiro com mais confiança.
           </p>
           <div className="tools-hub-proof">
             <div className="avatars" aria-hidden="true">
@@ -35,7 +36,7 @@ export function ToolsHubPage() {
               <span>A</span>
               <span>R</span>
             </div>
-            <small>Mais de 120 mil brasileiros ja simplificaram suas financas.</small>
+            <small>Mais de 120 mil brasileiros já simplificaram suas finanças.</small>
           </div>
         </header>
 
@@ -75,9 +76,9 @@ export function ToolsHubPage() {
                   </div>
                 ) : null}
 
-                <button className="btn btn-secondary" type="button">
+                <Link className="btn btn-secondary" href="/comparador-interativo">
                   Usar ferramenta
-                </button>
+                </Link>
               </article>
             ))}
           </div>
@@ -90,15 +91,15 @@ export function ToolsHubPage() {
                 <h2>Artigos recomendados</h2>
                 <p>Aprofunde seu conhecimento com nossa curadoria editorial.</p>
               </div>
-              <a href="#">Ver todo editorial</a>
+              <Link href="/editorial-artigo">Ver todo editorial</Link>
             </div>
             <div className="tools-hub-articles-grid">
               {recommendedToolArticles.map((article) => (
-                <article key={article.title} className="tools-hub-article-card">
+                <Link key={article.title} href="/editorial-artigo" className="tools-hub-article-card">
                   <Image src={article.image} alt={article.title} width={960} height={560} />
                   <span>{article.category}</span>
                   <h3>{article.title}</h3>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
@@ -108,12 +109,12 @@ export function ToolsHubPage() {
           <div className="tools-hub-cta">
             <h2>Pronto para transformar sua realidade financeira?</h2>
             <p>
-              Obtenha uma analise personalizada do seu perfil para descobrir onde economizar e
+              Obtenha uma análise personalizada do seu perfil para descobrir onde economizar e
               investir melhor hoje.
             </p>
-            <button className="btn btn-primary" type="button">
-              Iniciar diagnostico financeiro
-            </button>
+            <Link className="btn btn-primary" href="/diagnostico-financeiro">
+              Iniciar diagnóstico financeiro
+            </Link>
           </div>
         </section>
       </main>

@@ -15,7 +15,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: 'Cote Juros | Curadoria Financeira',
-  description: 'Compare opcoes financeiras, simuladores e diagnostico inteligente para sua vida financeira.'
+  description: 'Compare opções financeiras, simuladores e diagnóstico inteligente para sua vida financeira.'
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

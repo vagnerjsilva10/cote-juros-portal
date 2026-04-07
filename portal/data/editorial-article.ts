@@ -1,29 +1,29 @@
 export const articleToc = [
   "Anatomia do risco seletivo",
-  "Estatisticas que definem a decada",
-  "Comparativo tecnico por perfil",
-  "Checklist de decisao em 5 passos"
+  "Estatísticas que definem a década",
+  "Comparativo técnico por perfil",
+  "Checklist de decisão em 5 passos"
 ];
 
 export const articleFaq = [
   {
-    question: "Qual e o risco real no credito privado?",
+    question: "Qual é o risco real no crédito privado?",
     answer:
-      "O risco principal esta na qualidade da emissao. Por isso cruzamos historico, governanca e liquidez."
+      "O principal risco está na qualidade da emissão. Por isso cruzamos histórico, governança e liquidez."
   },
   {
     question: "Quando revisar minha carteira?",
-    answer: "A cada trimestre, ou antes se houver mudanca relevante de juros ou renda."
+    answer: "A cada trimestre, ou antes se houver mudança relevante de juros ou renda."
   },
   {
-    question: "Esse guia substitui recomendacao?",
+    question: "Este guia substitui recomendação individual?",
     answer:
-      "Nao. Ele orienta criterios tecnicos para decisao. Para recomendacao individual, use diagnostico personalizado."
+      "Não. Ele orienta critérios técnicos para decisão. Para recomendação personalizada, use o diagnóstico."
   }
 ];
 
 export const popularArticles = [
-  "Por que juros reais moldam patrimonio no longo prazo",
-  "Como comparar CDB, debenture e CRA com o mesmo criterio",
-  "Erro comum: confundir yield com retorno liquido"
+  "Por que juros reais moldam patrimônio no longo prazo",
+  "Como comparar CDB, debênture e CRA com o mesmo critério",
+  "Erro comum: confundir yield com retorno líquido"
 ];
