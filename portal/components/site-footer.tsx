@@ -1,4 +1,7 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
+
+import { FooterColumn } from '@/components/ui/footer-column';
+import { coteFinanceAppUrl } from '@/data/homepage';
 
 const footerColumns = [
   {
@@ -6,22 +9,32 @@ const footerColumns = [
     items: [
       { label: 'Comparadores', href: '/comparadores' },
       { label: 'Ferramentas', href: '/ferramentas' },
-      { label: 'Produtos', href: '/produtos' },
-      { label: 'Editorial', href: '/editorial' }
+      { label: 'Diagnostico Financeiro', href: '/diagnostico-financeiro' },
+      { label: 'Cote Finance AI', href: coteFinanceAppUrl, external: true }
+    ]
+  },
+  {
+    title: 'Comparadores',
+    items: [
+      { label: 'Cartoes de credito', href: '/cartoes-de-credito' },
+      { label: 'Emprestimos', href: '/emprestimos' },
+      { label: 'Financiamento', href: '/financiamento' },
+      { label: 'Comparador interativo', href: '/comparador-interativo' }
     ]
   },
   {
     title: 'Editorial',
     items: [
+      { label: 'Hub editorial', href: '/editorial' },
       { label: 'Blog', href: '/blog' },
       { label: 'Guias', href: '/guias' },
-      { label: 'Análise de mercado', href: '/analise-de-mercado' }
+      { label: 'Analise de mercado', href: '/analise-de-mercado' }
     ]
   },
   {
     title: 'Legal',
     items: [
-      { label: 'Política de privacidade', href: '/politica-de-privacidade' },
+      { label: 'Politica de privacidade', href: '/politica-de-privacidade' },
       { label: 'Termos de uso', href: '/termos-de-uso' }
     ]
   },
@@ -29,7 +42,8 @@ const footerColumns = [
     title: 'Suporte',
     items: [
       { label: 'Central de ajuda', href: '/central-de-ajuda' },
-      { label: 'Contato', href: '/contato' }
+      { label: 'Contato', href: '/contato' },
+      { label: 'Produtos', href: '/produtos' }
     ]
   }
 ] as const;
@@ -38,26 +52,23 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
-        <div>
-          <h3 className="brand">Cote Juros</h3>
-          <p className="footer-intro">
-            Elevando o padrão da curadoria financeira por meio de tecnologia, contexto e clareza.
+        <div className="footer-brand">
+          <Link className="brand" href="/">
+            Cote Juros
+          </Link>
+          <p>
+            Portal financeiro para comparar produtos, simular cenarios e tomar decisoes com clareza
+            tecnica.
           </p>
         </div>
         {footerColumns.map((column) => (
-          <div key={column.title}>
-            <h4>{column.title}</h4>
-            <ul>
-              {column.items.map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href}>{item.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterColumn key={column.title} title={column.title} items={column.items} />
         ))}
       </div>
-      <div className="container copyright">© 2026 Cote Juros. Todos os direitos reservados.</div>
+      <div className="container footer-bottom">
+        <small>© 2026 Cote Juros. Todos os direitos reservados.</small>
+        <small>CNPJ e dados institucionais disponiveis mediante solicitacao em nosso canal oficial.</small>
+      </div>
     </footer>
   );
 }

@@ -1,112 +1,199 @@
 ﻿export type NavItem = {
   label: string;
   href: string;
+  external?: boolean;
+  highlight?: boolean;
 };
 
-export type Pillar = {
+export type ProductPillar = {
   icon: string;
   title: string;
   description: string;
 };
 
-export type ComparatorRow = {
-  badge: string;
+export type CategoryCard = {
+  title: string;
+  description: string;
+  href: string;
+  icon: string;
+};
+
+export type ComparatorItem = {
   name: string;
-  meta: string;
-  highlight: string;
+  detail: string;
+  signal: string;
 };
 
 export type ComparatorGroup = {
   title: string;
+  description: string;
+  href: string;
   cta: string;
-  rows: ComparatorRow[];
+  items: ComparatorItem[];
+};
+
+export type ToolHighlight = {
+  title: string;
+  description: string;
+  href: string;
+  category: 'Credito' | 'Investimento' | 'Financiamento' | 'Consumo';
 };
 
 export type EditorialPost = {
+  slug: string;
   category: string;
   title: string;
-  author: string;
+  excerpt: string;
   readTime: string;
-  image: string;
 };
 
 export const navItems: NavItem[] = [
-  { label: 'Comparadores', href: '/comparador-interativo' },
+  { label: 'Home', href: '/' },
+  { label: 'Comparadores', href: '/comparadores' },
   { label: 'Ferramentas', href: '/ferramentas' },
-  { label: 'Editorial', href: '/editorial-artigo' },
-  { label: 'Cote Finance AI', href: 'https://finance.cotejuros.com.br?source=portal' }
+  { label: 'Editorial', href: '/editorial' },
+  { label: 'Produtos', href: '/produtos' },
+  { label: 'Diagnostico Financeiro', href: '/diagnostico-financeiro' },
+  {
+    label: 'Cote Finance AI',
+    href: 'https://finance.cotejuros.com.br/',
+    external: true,
+    highlight: true
+  }
 ];
 
-export const coteFinanceAppUrl = 'https://finance.cotejuros.com.br?source=portal';
+export const coteFinanceAppUrl = 'https://finance.cotejuros.com.br/';
 
-export const pillars: Pillar[] = [
+export const productPillars: ProductPillar[] = [
   {
-    icon: 'credit_card',
-    title: 'Cartões de crédito',
-    description: 'As melhores opções comparadas com base no seu perfil de consumo e benefícios.'
+    icon: 'shield',
+    title: 'Curadoria financeira',
+    description: 'Transformamos milhares de ofertas em poucas opcoes defensaveis para cada perfil.'
   },
   {
-    icon: 'account_balance',
-    title: 'Empréstimos',
-    description: 'Taxas reais, clareza total e simulações sem impacto no score de crédito.'
+    icon: 'monitoring',
+    title: 'Comparacao tecnica',
+    description: 'Taxa nominal, CET, risco e contrapartidas analisados com criterios transparentes.'
   },
   {
-    icon: 'query_stats',
-    title: 'Organização financeira',
-    description: 'Visualize para onde seu dinheiro vai e tome o controle do planejamento mensal.'
+    icon: 'auto_awesome',
+    title: 'Inteligencia aplicada',
+    description: 'Diagnostico e IA para acelerar decisoes com foco em custo, liquidez e patrimonio.'
+  },
+  {
+    icon: 'task_alt',
+    title: 'Clareza para decidir',
+    description: 'Explicamos o impacto real de cada escolha para voce agir com seguranca.'
+  }
+];
+
+export const homepageCategories: CategoryCard[] = [
+  {
+    title: 'Cartoes de credito',
+    description: 'Rankings por perfil, analise de anuidade, cashback e pontos.',
+    href: '/cartoes-de-credito',
+    icon: 'credit_card'
+  },
+  {
+    title: 'Emprestimos',
+    description: 'Comparacao por taxa, aprovacao, prazo e custo efetivo total.',
+    href: '/emprestimos',
+    icon: 'account_balance'
+  },
+  {
+    title: 'Financiamento',
+    description: 'Leitura de SAC vs PRICE, entrada ideal e impacto no fluxo de caixa.',
+    href: '/financiamento',
+    icon: 'home'
+  },
+  {
+    title: 'Organizacao financeira',
+    description: 'Ferramentas e diagnosticos para sair do improviso e planejar melhor.',
+    href: '/diagnostico-financeiro',
+    icon: 'query_stats'
   }
 ];
 
 export const comparatorGroups: ComparatorGroup[] = [
   {
-    title: 'Melhores cartões',
-    cta: 'Ver ranking completo',
-    rows: [
-      { badge: 'TOP 1', name: 'Infinite Premium', meta: 'Pontos: 2.5 por dólar', highlight: 'TOP 1' },
-      { badge: 'TOP 2', name: 'Platinum Global', meta: 'Cashback: 1.5%', highlight: 'TOP 2' }
+    title: 'Melhores cartoes',
+    description: 'Selecao com melhor equilibrio entre beneficio recorrente e custo anual.',
+    href: '/cartoes-de-credito',
+    cta: 'Ver comparador de cartoes',
+    items: [
+      { name: 'Infinite Rewards Elite', detail: 'Cashback ate 3% + salas VIP', signal: 'Alto valor' },
+      { name: 'Skyline Platinum Plus', detail: 'Forte em milhas internacionais', signal: 'Milhas' }
     ]
   },
   {
-    title: 'Cartões sem anuidade',
-    cta: 'Ver ranking completo',
-    rows: [
-      { badge: 'TOP 1', name: 'Digital Zero', meta: 'Anuidade: R$ 0', highlight: 'TOP 1' },
-      { badge: 'TOP 2', name: 'Green Lite', meta: 'Benefícios sustentáveis', highlight: 'TOP 2' }
+    title: 'Cartoes sem anuidade',
+    description: 'Produtos para rotina de gastos com controle de custo fixo mensal.',
+    href: '/cartoes-de-credito',
+    cta: 'Ver opcoes sem anuidade',
+    items: [
+      { name: 'Neo Digital Zero', detail: 'Anuidade R$ 0 e app completo', signal: 'R$ 0' },
+      { name: 'Green Lite', detail: 'Perfil de entrada com cashback basico', signal: 'Entrada' }
     ]
   },
   {
-    title: 'Melhores empréstimos',
-    cta: 'Ver todas as taxas',
-    rows: [
-      { badge: '1.1%', name: 'Home Equity X', meta: 'Taxas a partir de 0.8% a.m.', highlight: '1.1%' },
-      { badge: '2.4%', name: 'Pessoal Digital', meta: 'Liberação em 24h', highlight: '2.4%' }
+    title: 'Melhores emprestimos',
+    description: 'Taxas e aprovacao comparadas para credito pessoal e renegociacao.',
+    href: '/emprestimos',
+    cta: 'Ver comparador de emprestimos',
+    items: [
+      { name: 'Banco Alpha Prime', detail: 'Taxa a partir de 1,49% a.m.', signal: 'Top taxa' },
+      { name: 'Banco Horizonte', detail: 'Prazo de ate 60 meses', signal: 'Prazo' }
     ]
+  }
+];
+
+export const toolHighlights: ToolHighlight[] = [
+  {
+    title: 'Calculadora de juros',
+    description: 'Entenda o custo real de juros simples e compostos em segundos.',
+    href: '/ferramentas#credito',
+    category: 'Credito'
+  },
+  {
+    title: 'Simulador de emprestimo',
+    description: 'Projete parcela, CET e custo total antes de contratar credito.',
+    href: '/emprestimos',
+    category: 'Credito'
+  },
+  {
+    title: 'Simulador de financiamento',
+    description: 'Compare SAC e PRICE para reduzir juros no longo prazo.',
+    href: '/financiamento',
+    category: 'Financiamento'
+  },
+  {
+    title: 'Simulador de parcelamento',
+    description: 'Decida entre pagar a vista ou parcelar sem comprometer caixa.',
+    href: '/ferramentas#consumo',
+    category: 'Consumo'
   }
 ];
 
 export const editorialPosts: EditorialPost[] = [
   {
-    category: 'Estratégia',
-    title: 'Como o refinanciamento pode se tornar sua alavanca em 2026',
-    author: 'Marcos Valente',
-    readTime: '8 min de leitura',
-    image:
-      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80'
+    slug: '/editorial-artigo',
+    category: 'Estrategia',
+    title: 'Como usar portabilidade para reduzir custo de credito em 2026',
+    excerpt: 'Metodologia para avaliar propostas e evitar troca que parece barata, mas custa mais no total.',
+    readTime: '8 min'
   },
   {
-    category: 'Inovação',
-    title: 'O impacto da IA generativa na gestão do patrimônio pessoal',
-    author: 'Ana Paula Costa',
-    readTime: '5 min de leitura',
-    image:
-      'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80'
+    slug: '/analise-de-mercado',
+    category: 'Inovacao',
+    title: 'IA financeira no dia a dia: onde ela reduz risco de decisao',
+    excerpt: 'Quando confiar em automacao e quando manter avaliacao humana em operacoes criticas.',
+    readTime: '5 min'
   },
   {
+    slug: '/blog',
     category: 'Mercado',
-    title: 'Selic e crédito: guia prático para o investidor moderado',
-    author: 'Equipe Editorial',
-    readTime: '12 min de leitura',
-    image:
-      'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1200&q=80'
+    title: 'Selic, spread e credito: o que muda no bolso do consumidor',
+    excerpt: 'Leitura pratica para ajustar consumo, renegociacao e investimentos em ciclos de juros.',
+    readTime: '12 min'
   }
 ];

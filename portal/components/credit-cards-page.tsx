@@ -1,137 +1,73 @@
-﻿import Image from 'next/image';
 import Link from 'next/link';
 
-import { Icon } from '@/components/icon';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { approvalChecklist, cardComparisonRows, creditFilters, rankedCards } from '@/data/credit-cards';
+import { CTASection } from '@/components/ui/cta-section';
+import { PageHero } from '@/components/ui/page-hero';
+import { SectionHeader } from '@/components/ui/section-header';
+import { coteFinanceAppUrl } from '@/data/homepage';
 
-function StarRating({ total }: { total: number }) {
-  return (
-    <div className="cc-stars" aria-label={`${total} estrelas`}>
-      {Array.from({ length: total }, (_, index) => (
-        <Icon key={index} name="star" className="filled" />
-      ))}
-    </div>
-  );
-}
+const cards = [
+  {
+    name: 'Infinite Rewards Elite',
+    profile: 'Alta renda',
+    annualFee: 'Isencao por gasto',
+    benefit: 'Cashback ate 3%',
+    score: '700+'
+  },
+  {
+    name: 'Skyline Platinum Plus',
+    profile: 'Viajantes',
+    annualFee: '12x R$ 45',
+    benefit: '4 pts por dolar',
+    score: '720+'
+  },
+  {
+    name: 'Neo Digital Zero',
+    profile: 'Entrada',
+    annualFee: 'R$ 0',
+    benefit: 'Cashback 0,5%',
+    score: '650+'
+  }
+];
 
 export function CreditCardsPage() {
   return (
     <>
-      <SiteHeader activeLabel="Comparadores" />
-      <main className="cc-page">
-        <section className="cc-hero section-spaced">
-          <div className="container cc-hero-grid">
-            <div>
-              <span className="eyebrow">Editorial Selection 2026</span>
-              <h1>
-                A arte de escolher o seu <span>próximo cartão.</span>
-              </h1>
-              <p>
-                Nossa curadoria decompõe taxas e benefícios para encontrar o cartão ideal para sua
-                estratégia de patrimônio.
-              </p>
-            </div>
-            <div className="cc-hero-media">
-              <Image
-                src="https://images.unsplash.com/photo-1548427721-7f8d7f7a9d18?auto=format&fit=crop&w=1200&q=80"
-                alt="Cartões de crédito premium sobre mesa escura"
-                width={1280}
-                height={960}
-              />
-            </div>
-          </div>
-        </section>
+      <SiteHeader activePath="/comparadores" />
+      <main>
+        <PageHero
+          eyebrow="Comparador de cartoes"
+          title="Escolha seu cartao com base em custo, beneficio e aderencia ao seu perfil."
+          subtitle="Comparacao editorial com criterios objetivos para evitar decisao baseada apenas em marketing."
+          actions={[
+            { label: 'Voltar ao hub de comparadores', href: '/comparadores' },
+            { label: 'Abrir comparador interativo', href: '/comparador-interativo', tone: 'secondary' }
+          ]}
+        />
 
-        <section className="cc-filters">
-          <div className="container cc-filter-wrap">
-            {creditFilters.map((filter) => (
-              <Link
-                key={filter.label}
-                href="/cartoes-de-credito"
-                className={filter.active ? 'cc-filter active' : 'cc-filter'}
-              >
-                {filter.label}
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className="cc-ranking section-spaced">
+        <section className="section-space section-muted">
           <div className="container">
-            <div className="section-head">
-              <div>
-                <h2>O Ranking de Elite</h2>
-                <p>Baseado em custo-benefício, recompensas e aceitação.</p>
-              </div>
-              <strong>Atualizado em 7 de abril de 2026</strong>
-            </div>
-
-            <div className="cc-ranking-list">
-              {rankedCards.map((card) => (
-                <article key={card.name} className="cc-ranking-card">
-                  <div className="cc-card-image">
-                    <Image src={card.image} alt={card.name} width={920} height={560} />
-                  </div>
-
-                  <div className="cc-card-content">
-                    <div className="cc-card-head">
-                      {card.badge ? (
-                        <span className={card.badgeTone === 'violet' ? 'tag violet' : 'tag'}>{card.badge}</span>
-                      ) : null}
-                      {card.stars ? <StarRating total={card.stars} /> : null}
-                    </div>
-
-                    <h3>{card.name}</h3>
-                    <p>{card.description}</p>
-
-                    <div className="cc-metrics">
-                      {card.metrics.map((metric) => (
-                        <div key={`${card.name}-${metric.label}`}>
-                          <small>{metric.label}</small>
-                          <strong>{metric.value}</strong>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="cc-card-action">
-                    <Link
-                      className={card.ctaStyle === 'outline' ? 'btn btn-outline' : 'btn btn-primary'}
-                      href="/comparador-interativo"
-                    >
-                      {card.ctaLabel}
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="cc-table section-spaced section-muted">
-          <div className="container">
-            <h2>Comparativo Técnico</h2>
-            <div className="cc-table-wrap">
+            <SectionHeader title="Ranking atual de cartoes" description="Atualizacao editorial com foco em custo total e recorrencia de beneficio." />
+            <div className="table-wrap">
               <table>
                 <thead>
                   <tr>
-                    <th>Cartão</th>
-                    <th>Juros rotativo</th>
-                    <th>Taxa de saque</th>
-                    <th>Benefício-chave</th>
+                    <th>Cartao</th>
+                    <th>Perfil</th>
                     <th>Anuidade</th>
+                    <th>Beneficio principal</th>
+                    <th>Score sugerido</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {cardComparisonRows.map((row) => (
-                    <tr key={row.card}>
-                      <td>{row.card}</td>
-                      <td>{row.revolvingInterest}</td>
-                      <td>{row.withdrawFee}</td>
-                      <td className="highlight">{row.keyBenefit}</td>
-                      <td>{row.yearlyFee}</td>
+                  {cards.map((card) => (
+                    <tr key={card.name}>
+                      <td>{card.name}</td>
+                      <td>{card.profile}</td>
+                      <td>{card.annualFee}</td>
+                      <td>{card.benefit}</td>
+                      <td>{card.score}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -140,47 +76,39 @@ export function CreditCardsPage() {
           </div>
         </section>
 
-        <section className="cc-education section-spaced">
-          <div className="container cc-education-grid">
-            <article className="cc-education-main">
-              <h3>O erro que 80% dos brasileiros cometem</h3>
-              <p>
-                Pagar o mínimo da fatura parece simples, mas acelera o crescimento da dívida no
-                rotativo. Entenda como reduzir esse risco antes que ele comprometa seu fluxo.
-              </p>
-              <Link href="/editorial-artigo">Ler guia completo</Link>
+        <section className="section-space">
+          <div className="container two-col-grid">
+            <article className="panel-card">
+              <h2>Como escolher o cartao ideal</h2>
+              <ol>
+                <li>Defina seu objetivo principal: cashback, milhas ou controle de custo.</li>
+                <li>Compare anuidade com retorno esperado de uso mensal.</li>
+                <li>Considere score minimo e risco de aprovacao antes de solicitar.</li>
+              </ol>
             </article>
-
-            <article className="cc-checklist">
-              <Icon name="verified" className="cc-check-icon" />
-              <h3>Checklist da aprovação</h3>
-              <ul>
-                {approvalChecklist.map((item) => (
-                  <li key={item}>
-                    <Icon name="check_circle" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section className="cc-cta section-spaced">
-          <div className="container">
-            <div className="cc-cta-box">
-              <h2>Não sabe qual escolher?</h2>
+            <article className="panel-card">
+              <h2>Transparencia editorial</h2>
               <p>
-                Responda 5 perguntas e nosso algoritmo sugere o cartão mais aderente ao seu estilo
-                de vida e metas financeiras.
+                O ranking considera custo, utilidade real dos beneficios e aderencia de perfil.
+                Relacoes comerciais nao alteram a ordem tecnica da avaliacao.
               </p>
-              <Link className="btn btn-light" href="/diagnostico-financeiro">
-                Iniciar diagnóstico gratuito
+              <Link className="btn btn-secondary" href="/editorial-artigo">
+                Ler metodologia completa
               </Link>
-              <small>Leva menos de 2 minutos</small>
-            </div>
+            </article>
           </div>
         </section>
+
+        <CTASection
+          title="Nao sabe qual cartao combina com sua rotina?"
+          description="Use o diagnostico para receber recomendacoes priorizadas pelo seu contexto financeiro."
+          primaryLabel="Iniciar diagnostico"
+          primaryHref="/diagnostico-financeiro"
+          secondaryLabel="Abrir Cote Finance AI"
+          secondaryHref={coteFinanceAppUrl}
+          secondaryExternal
+          dark
+        />
       </main>
       <SiteFooter />
     </>

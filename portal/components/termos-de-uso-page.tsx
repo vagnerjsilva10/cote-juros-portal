@@ -1,57 +1,49 @@
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
+import { LegalContentLayout } from '@/components/ui/legal-content-layout';
+
+const sections = [
+  {
+    title: '1. Escopo do portal',
+    paragraphs: [
+      'O Cote Juros oferece conteudo editorial, comparadores e ferramentas com finalidade informativa e educativa.',
+      'As informacoes nao constituem consultoria financeira individual, recomendacao de investimento ou garantia de aprovacao de credito.'
+    ]
+  },
+  {
+    title: '2. Responsabilidades do usuario',
+    paragraphs: [
+      'O usuario e responsavel por validar condicoes finais diretamente com instituicoes financeiras antes de contratar qualquer produto.',
+      'Tambem e responsabilidade do usuario manter dados de acesso protegidos e utilizar o portal de forma licita.'
+    ]
+  },
+  {
+    title: '3. Propriedade intelectual',
+    paragraphs: [
+      'Conteudos, marcas, interfaces e elementos visuais do portal sao protegidos por direitos autorais e de propriedade intelectual.',
+      'A reproducao parcial ou total depende de autorizacao previa por escrito.'
+    ]
+  },
+  {
+    title: '4. Atualizacoes e disponibilidade',
+    paragraphs: [
+      'Podemos atualizar funcionalidades, criterios editoriais e condicoes de uso para melhorar o servico.',
+      'Nao garantimos disponibilidade ininterrupta e podemos realizar manutencoes programadas sem aviso previo.'
+    ]
+  }
+];
 
 export function TermosDeUsoPage() {
   return (
     <>
-      <SiteHeader />
-      <main>
-        <section className="section-spaced">
-          <div className="container">
-            <h1>Termos de uso</h1>
-            <p>Condições gerais para utilização do portal Cote Juros.</p>
-          </div>
-        </section>
-
-        <section className="section-spaced section-muted">
-          <div className="container">
-            <h2>Introdução</h2>
-            <p>
-              Ao acessar este portal, você concorda com estes termos e com as políticas aplicáveis ao
-              uso da plataforma.
-            </p>
-
-            <h2>Uso da plataforma</h2>
-            <p>
-              O conteúdo é informativo e voltado à comparação e educação financeira. O usuário deve
-              utilizar a plataforma de forma lícita e responsável.
-            </p>
-
-            <h2>Responsabilidades</h2>
-            <p>
-              Cada decisão financeira permanece sob responsabilidade do usuário. Recomendamos avaliação
-              cuidadosa antes de contratar qualquer produto.
-            </p>
-
-            <h2>Propriedade intelectual</h2>
-            <p>
-              Marcas, textos, design e demais ativos do portal são protegidos por direitos de
-              propriedade intelectual, salvo quando indicado de forma diversa.
-            </p>
-
-            <h2>Isenções</h2>
-            <p>
-              Não garantimos disponibilidade ininterrupta ou ausência de falhas. Informações podem ser
-              atualizadas sem aviso prévio.
-            </p>
-
-            <h2>Contato</h2>
-            <p>Para dúvidas sobre estes termos, escreva para contato@cotejuros.com.br.</p>
-          </div>
-        </section>
-      </main>
+      <SiteHeader activePath="/termos-de-uso" />
+      <LegalContentLayout
+        title="Termos de Uso"
+        updatedAt="7 de abril de 2026"
+        intro="Estes termos descrevem as condicoes para utilizacao do portal Cote Juros e de seus conteudos."
+        sections={sections}
+      />
       <SiteFooter />
     </>
   );
 }
-

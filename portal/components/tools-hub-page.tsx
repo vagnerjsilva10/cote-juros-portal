@@ -1,122 +1,160 @@
-﻿import Image from 'next/image';
 import Link from 'next/link';
 
-import { Icon } from '@/components/icon';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { recommendedToolArticles, toolCards } from '@/data/tools-hub';
+import { CTASection } from '@/components/ui/cta-section';
+import { PageHero } from '@/components/ui/page-hero';
+import { SectionHeader } from '@/components/ui/section-header';
+import { coteFinanceAppUrl } from '@/data/homepage';
 
-function toneClass(tone: 'primary' | 'tertiary' | 'secondary' | 'neutral') {
-  if (tone === 'primary') return 'tone-primary';
-  if (tone === 'tertiary') return 'tone-tertiary';
-  if (tone === 'secondary') return 'tone-secondary';
-  return 'tone-neutral';
-}
+const toolCategories = [
+  {
+    id: 'credito',
+    title: 'Credito',
+    description: 'Ferramentas para ler custo total, simular parcelas e comparar alternativas.',
+    cards: [
+      {
+        title: 'Calculadora de juros',
+        description: 'Compare juros simples e compostos para entender o custo real da operacao.',
+        href: '/ferramentas#credito'
+      },
+      {
+        title: 'Simulador de emprestimo',
+        description: 'Projete parcela, CET estimado e variacao por prazo antes de contratar.',
+        href: '/emprestimos'
+      }
+    ]
+  },
+  {
+    id: 'investimento',
+    title: 'Investimento',
+    description: 'Cenarios para projetar crescimento patrimonial e relacao risco-retorno.',
+    cards: [
+      {
+        title: 'Projecao de patrimonio',
+        description: 'Entenda o efeito do tempo, aporte mensal e taxa anual na acumulacao.',
+        href: '/ferramentas#investimento'
+      },
+      {
+        title: 'Reserva de emergencia',
+        description: 'Calcule meta de seguranca financeira com base no seu custo de vida.',
+        href: '/diagnostico-financeiro'
+      }
+    ]
+  },
+  {
+    id: 'financiamento',
+    title: 'Financiamento',
+    description: 'Analise de entrada, amortizacao e impacto de taxa no longo prazo.',
+    cards: [
+      {
+        title: 'Simulador SAC x PRICE',
+        description: 'Compare estruturas de parcela e juros totais por horizonte de contrato.',
+        href: '/financiamento'
+      },
+      {
+        title: 'Planejamento de entrada',
+        description: 'Defina a entrada ideal para reduzir custo sem comprometer liquidez.',
+        href: '/financiamento#ranking'
+      }
+    ]
+  },
+  {
+    id: 'consumo',
+    title: 'Consumo',
+    description: 'Recursos para decidir melhor entre compra a vista, parcelamento e credito.',
+    cards: [
+      {
+        title: 'Simulador de parcelamento',
+        description: 'Mostra quando o desconto a vista supera o parcelamento no cartao.',
+        href: '/ferramentas#consumo'
+      },
+      {
+        title: 'Planner de gastos recorrentes',
+        description: 'Mapeie assinaturas e identifique despesas de baixo retorno percebido.',
+        href: '/diagnostico-financeiro'
+      }
+    ]
+  }
+];
+
+const microcopy = [
+  'Todas as simulacoes sao educativas e nao representam oferta de credito.',
+  'Sempre confirme taxa, CET e condicoes finais no canal oficial da instituicao.',
+  'Use o diagnostico para priorizar a ferramenta mais relevante para seu momento.'
+];
 
 export function ToolsHubPage() {
   return (
     <>
-      <SiteHeader activeLabel="Ferramentas" />
-      <main className="tools-hub-page">
-        <header className="container tools-hub-hero">
-          <div className="tools-hub-badge">
-            <Icon name="verified" />
-            <span>Curadoria especializada</span>
-          </div>
-          <h1>
-            Ferramentas que <span>simplificam</span> o complexo.
-          </h1>
-          <p>
-            Decisões financeiras exigem clareza. Use nossos simuladores para visualizar seu futuro
-            financeiro com mais confiança.
-          </p>
-          <div className="tools-hub-proof">
-            <div className="avatars" aria-hidden="true">
-              <span>M</span>
-              <span>A</span>
-              <span>R</span>
-            </div>
-            <small>Mais de 120 mil brasileiros já simplificaram suas finanças.</small>
-          </div>
-        </header>
+      <SiteHeader activePath="/ferramentas" />
+      <main>
+        <PageHero
+          eyebrow="Ferramentas"
+          title="Ferramentas financeiras feitas para decidir, nao para confundir."
+          subtitle="Organizamos simuladores por contexto de uso para voce enxergar custo, risco e impacto antes de contratar qualquer produto financeiro."
+          actions={[
+            { label: 'Fazer diagnostico financeiro', href: '/diagnostico-financeiro' },
+            { label: 'Explorar editorial', href: '/editorial', tone: 'secondary' }
+          ]}
+        />
 
-        <section className="container tools-hub-grid-section">
-          <div className="tools-hub-grid">
-            {toolCards.map((card) => (
-              <article
-                key={card.title}
-                className={card.variant === 'wide' ? 'tool-card tool-card-wide' : 'tool-card'}
-              >
-                <div className="tool-card-head">
-                  <div className={`tool-icon ${toneClass(card.categoryTone)}`}>
-                    <Icon name={card.icon} />
-                  </div>
-                  <span className={`tool-chip ${toneClass(card.categoryTone)}`}>{card.category}</span>
-                </div>
-
-                <h3>{card.title}</h3>
-                <p>{card.description}</p>
-
-                {card.variant === 'wide' && card.metrics ? (
-                  <div className="tool-finance-box">
-                    {card.metrics.map((metric) => (
-                      <div key={`${card.title}-${metric.label}`}>
-                        <span>{metric.label}</span>
-                        <strong className={metric.highlight ? 'highlight' : undefined}>{metric.value}</strong>
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
-
-                {card.bullets ? (
-                  <div className="tool-bullets">
-                    {card.bullets.map((bullet) => (
-                      <div key={bullet}>{bullet}</div>
-                    ))}
-                  </div>
-                ) : null}
-
-                <Link className="btn btn-secondary" href="/comparador-interativo">
-                  Usar ferramenta
-                </Link>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="tools-hub-articles section-muted">
-          <div className="container">
-            <div className="tools-hub-articles-head">
-              <div>
-                <h2>Artigos recomendados</h2>
-                <p>Aprofunde seu conhecimento com nossa curadoria editorial.</p>
+        {toolCategories.map((category) => (
+          <section
+            key={category.id}
+            id={category.id}
+            className={category.id === 'investimento' || category.id === 'consumo' ? 'section-space section-muted' : 'section-space'}
+          >
+            <div className="container">
+              <SectionHeader title={category.title} description={category.description} />
+              <div className="tool-grid">
+                {category.cards.map((card) => (
+                  <article key={card.title} className="tool-card">
+                    <h3>{card.title}</h3>
+                    <p>{card.description}</p>
+                    <Link className="card-link" href={card.href}>
+                      Abrir ferramenta
+                    </Link>
+                  </article>
+                ))}
               </div>
-              <Link href="/editorial-artigo">Ver todo editorial</Link>
             </div>
-            <div className="tools-hub-articles-grid">
-              {recommendedToolArticles.map((article) => (
-                <Link key={article.title} href="/editorial-artigo" className="tools-hub-article-card">
-                  <Image src={article.image} alt={article.title} width={960} height={560} />
-                  <span>{article.category}</span>
-                  <h3>{article.title}</h3>
-                </Link>
-              ))}
-            </div>
+          </section>
+        ))}
+
+        <section className="section-space">
+          <div className="container two-col-grid">
+            <article className="panel-card">
+              <h2>Contexto para interpretar resultados</h2>
+              <p>
+                Ferramenta sem contexto gera falsa confianca. Por isso cada simulador tem apoio
+                editorial para explicar como usar o resultado na pratica.
+              </p>
+              <Link className="btn btn-secondary" href="/editorial">
+                Ler conteudos recomendados
+              </Link>
+            </article>
+            <article className="panel-card">
+              <h2>Boas praticas de uso</h2>
+              <ul>
+                {microcopy.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
           </div>
         </section>
 
-        <section className="container tools-hub-cta-wrap">
-          <div className="tools-hub-cta">
-            <h2>Pronto para transformar sua realidade financeira?</h2>
-            <p>
-              Obtenha uma análise personalizada do seu perfil para descobrir onde economizar e
-              investir melhor hoje.
-            </p>
-            <Link className="btn btn-primary" href="/diagnostico-financeiro">
-              Iniciar diagnóstico financeiro
-            </Link>
-          </div>
-        </section>
+        <CTASection
+          title="Leve os dados das ferramentas para um plano real"
+          description="Use o diagnostico para transformar simulacoes isoladas em uma estrategia financeira priorizada."
+          primaryLabel="Iniciar diagnostico"
+          primaryHref="/diagnostico-financeiro"
+          secondaryLabel="Abrir Cote Finance AI"
+          secondaryHref={coteFinanceAppUrl}
+          secondaryExternal
+          dark
+        />
       </main>
       <SiteFooter />
     </>

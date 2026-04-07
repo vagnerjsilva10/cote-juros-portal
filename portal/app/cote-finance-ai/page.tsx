@@ -1,5 +1,7 @@
-import { CoteFinanceAiPage } from "@/components/cote-finance-ai-page";
+import { redirect } from 'next/navigation';
+
+import { coteFinanceAppUrl } from '@/data/homepage';
 
 export default function Page() {
-  return <CoteFinanceAiPage />;
+  redirect(coteFinanceAppUrl);
 }

@@ -1,57 +1,49 @@
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
+import { LegalContentLayout } from '@/components/ui/legal-content-layout';
+
+const sections = [
+  {
+    title: '1. Dados coletados',
+    paragraphs: [
+      'Coletamos dados de navegacao, interacao e informacoes fornecidas por voce em formularios do portal.',
+      'Quando necessario para suporte ou relacionamento comercial, podemos solicitar dados de contato adicionais.'
+    ]
+  },
+  {
+    title: '2. Finalidades de uso',
+    paragraphs: [
+      'Usamos os dados para melhorar experiencia, personalizar conteudo e oferecer suporte tecnico e institucional.',
+      'Tambem utilizamos informacoes agregadas para medir desempenho de produtos e qualidade editorial.'
+    ]
+  },
+  {
+    title: '3. Compartilhamento e seguranca',
+    paragraphs: [
+      'Nao comercializamos dados pessoais. O compartilhamento ocorre apenas com fornecedores essenciais e sob obrigacoes contratuais.',
+      'Aplicamos medidas de seguranca administrativas e tecnicas para proteger as informacoes processadas.'
+    ]
+  },
+  {
+    title: '4. Direitos do titular',
+    paragraphs: [
+      'Voce pode solicitar confirmacao de tratamento, acesso, correcao, portabilidade e eliminacao de dados conforme a legislacao aplicavel.',
+      'Solicitacoes podem ser feitas por meio do email contato@cotejuros.com.br.'
+    ]
+  }
+];
 
 export function PoliticaPrivacidadePage() {
   return (
     <>
-      <SiteHeader />
-      <main>
-        <section className="section-spaced">
-          <div className="container">
-            <h1>Política de privacidade</h1>
-            <p>Última atualização: 7 de abril de 2026.</p>
-          </div>
-        </section>
-
-        <section className="section-spaced section-muted">
-          <div className="container">
-            <h2>Dados coletados</h2>
-            <p>
-              Podemos coletar dados cadastrais, de navegação e de interação para melhorar sua
-              experiência no portal e nos serviços relacionados.
-            </p>
-
-            <h2>Uso das informações</h2>
-            <p>
-              As informações são utilizadas para personalização de conteúdo, melhoria de produtos,
-              suporte e comunicação institucional.
-            </p>
-
-            <h2>Cookies</h2>
-            <p>
-              Utilizamos cookies para lembrar preferências, medir desempenho e apoiar análises de
-              navegação do portal.
-            </p>
-
-            <h2>Compartilhamento</h2>
-            <p>
-              Não comercializamos dados pessoais. O compartilhamento ocorre apenas quando necessário
-              para operação de serviços, cumprimento legal ou mediante consentimento.
-            </p>
-
-            <h2>Direitos do usuário</h2>
-            <p>
-              Você pode solicitar acesso, correção, atualização e exclusão de dados pessoais, nos
-              termos da legislação aplicável.
-            </p>
-
-            <h2>Contato</h2>
-            <p>Em caso de dúvidas sobre privacidade, entre em contato em contato@cotejuros.com.br.</p>
-          </div>
-        </section>
-      </main>
+      <SiteHeader activePath="/politica-de-privacidade" />
+      <LegalContentLayout
+        title="Politica de Privacidade"
+        updatedAt="7 de abril de 2026"
+        intro="Este documento explica como o Cote Juros coleta, utiliza e protege dados pessoais no contexto do portal."
+        sections={sections}
+      />
       <SiteFooter />
     </>
   );
 }
-

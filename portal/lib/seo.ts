@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 
 export const SITE_NAME = 'Cote Juros';
 export const SITE_URL = 'https://cotejuros.com.br';
@@ -71,19 +71,19 @@ export function organizationSchema(): SchemaObject {
     url: SITE_URL,
     logo: `${SITE_URL}/icon.png`,
     description:
-      'Portal financeiro com curadoria técnica, comparadores de crédito e inteligência financeira aplicada.',
+      'Portal financeiro com curadoria tecnica, comparadores de credito e inteligencia financeira aplicada.',
     foundingDate: '2026-01-01',
     founder: {
       '@type': 'Person',
-      name: 'Equipe Técnica Cote Juros',
-      jobTitle: 'Especialistas em análise financeira e crédito'
+      name: 'Equipe Tecnica Cote Juros',
+      jobTitle: 'Especialistas em analise financeira e credito'
     },
     areaServed: 'BR',
     knowsAbout: [
-      'análise de dívidas',
-      'comparação de taxas de juros',
+      'analise de dividas',
+      'comparacao de taxas de juros',
       'planejamento financeiro',
-      'inteligência financeira'
+      'inteligencia financeira'
     ]
   };
 }
@@ -164,7 +164,7 @@ export function financialServiceSchema(input: {
       url: SITE_URL
     },
     areaServed: 'BR',
-    serviceType: 'Curadoria e comparação financeira'
+    serviceType: 'Curadoria e comparacao financeira'
   };
 }
 
@@ -226,4 +226,3 @@ export function webPageSchema(input: {
     }
   };
 }
-
