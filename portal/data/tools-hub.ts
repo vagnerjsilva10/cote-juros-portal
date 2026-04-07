@@ -1,4 +1,4 @@
-﻿export type ToolCard = {
+export type ToolCard = {
   icon: string;
   category: string;
   categoryTone: 'primary' | 'tertiary' | 'secondary' | 'neutral';

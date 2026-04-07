@@ -1,4 +1,4 @@
-﻿export type ComparatorFilterGroup = {
+export type ComparatorFilterGroup = {
   title: string;
   type: 'checkbox' | 'range' | 'select';
   options?: string[];

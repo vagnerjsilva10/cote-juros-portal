@@ -1,4 +1,4 @@
-﻿import Image from 'next/image';
+import Image from 'next/image';
 
 import { Icon } from '@/components/icon';
 import { SiteFooter } from '@/components/site-footer';

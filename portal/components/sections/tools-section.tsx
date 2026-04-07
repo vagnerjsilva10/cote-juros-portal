@@ -1,4 +1,4 @@
-﻿import { Icon } from '@/components/icon';
+import { Icon } from '@/components/icon';
 
 const toolFeatures = [
   'Calculo real de CET (Custo Efetivo Total)',

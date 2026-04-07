@@ -1,4 +1,4 @@
-﻿export type CreditFilter = {
+export type CreditFilter = {
   label: string;
   active?: boolean;
 };

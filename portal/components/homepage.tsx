@@ -1,4 +1,4 @@
-﻿import { SiteFooter } from '@/components/site-footer';
+import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { AiSection } from '@/components/sections/ai-section';
 import { ComparatorsSection } from '@/components/sections/comparators-section';

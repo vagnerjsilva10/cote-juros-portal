@@ -1,4 +1,4 @@
-﻿export function ProblemSection() {
+export function ProblemSection() {
   return (
     <section className="section-problem section-spaced">
       <div className="container problem-content">

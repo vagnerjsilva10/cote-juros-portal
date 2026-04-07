@@ -1,4 +1,4 @@
-﻿import { comparatorGroups } from '@/data/homepage';
+import { comparatorGroups } from '@/data/homepage';
 
 export function ComparatorsSection() {
   return (

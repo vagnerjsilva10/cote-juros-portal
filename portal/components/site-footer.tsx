@@ -1,4 +1,4 @@
-﻿const footerColumns = [
+const footerColumns = [
   {
     title: 'Produtos',
     items: ['Comparadores', 'Ferramentas', 'Produtos']

@@ -1,4 +1,4 @@
-﻿export function HeroSection() {
+export function HeroSection() {
   return (
     <section className="hero section-spaced">
       <div className="container hero-grid">

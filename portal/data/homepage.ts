@@ -1,4 +1,4 @@
-﻿export type NavItem = {
+export type NavItem = {
   label: string;
   href: string;
 };
@@ -33,8 +33,8 @@ export type EditorialPost = {
 export const navItems: NavItem[] = [
   { label: 'Comparadores', href: '/comparador-interativo' },
   { label: 'Ferramentas', href: '/ferramentas' },
-  { label: 'Editorial', href: '/#editorial' },
-  { label: 'Cote Finance AI', href: '/#cote-finance-ai' }
+  { label: 'Editorial', href: '/editorial-artigo' },
+  { label: 'Cote Finance AI', href: '/cote-finance-ai' }
 ];
 
 export const pillars: Pillar[] = [
