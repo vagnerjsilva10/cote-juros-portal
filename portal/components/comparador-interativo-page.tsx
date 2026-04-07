@@ -1,8 +1,10 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
+import Link from 'next/link';
 
 import { Icon } from '@/components/icon';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
+import { coteFinanceAppUrl } from '@/data/homepage';
 import {
   comparatorCards,
   comparatorDetailRows,
@@ -17,21 +19,21 @@ export function ComparadorInterativoPage() {
         <section className="cmp-header container">
           <div className="cmp-badge">
             <Icon name="verified_user" />
-            <span>Mais de 50 mil cartoes comparados este mes</span>
+            <span>Mais de 50 mil cartões comparados este mês</span>
           </div>
           <h1>
-            Escolha seu proximo <span>Cartao de Credito</span>
+            Escolha seu próximo <span>Cartão de Crédito</span>
           </h1>
           <p>
-            Analise taxas, milhas e beneficios lado a lado com nossa curadoria financeira de alta
-            precisao.
+            Analise taxas, milhas e benefícios lado a lado com nossa curadoria financeira de alta
+            precisão.
           </p>
         </section>
 
         <section className="cmp-body container">
           <aside className="cmp-sidebar">
             <div className="cmp-sidebar-head">
-              <h2>Filtros Avancados</h2>
+              <h2>Filtros Avançados</h2>
               <Icon name="tune" />
             </div>
 
@@ -80,9 +82,9 @@ export function ComparadorInterativoPage() {
               ))}
             </div>
 
-            <button className="btn btn-dark cmp-filter-cta" type="button">
+            <Link className="btn btn-dark cmp-filter-cta" href="/comparador-interativo">
               Aplicar filtros
-            </button>
+            </Link>
           </aside>
 
           <div className="cmp-content">
@@ -115,12 +117,12 @@ export function ComparadorInterativoPage() {
                     ))}
                   </ul>
 
-                  <button className="btn btn-primary" type="button">
+                  <Link className="btn btn-primary" href="/cartoes-de-credito">
                     {card.cta}
-                  </button>
+                  </Link>
                   <small>
-                    Ao clicar, voce sera redirecionado ao site oficial do parceiro. Podemos receber
-                    comissao por indicacao.
+                    Ao clicar, você será redirecionado ao site oficial do parceiro. Podemos receber
+                    comissão por indicação.
                   </small>
                 </article>
               ))}
@@ -131,21 +133,21 @@ export function ComparadorInterativoPage() {
                     <Icon name="neurology" />
                     <span>Cote Finance AI</span>
                   </div>
-                  <h3>Nao sabe qual escolher?</h3>
+                  <h3>Não sabe qual escolher?</h3>
                   <p>
-                    Nossa IA analisa seu perfil e recomenda o cartao ideal em cerca de 15 segundos.
+                    Nossa IA analisa seu perfil e recomenda o cartão ideal em cerca de 15 segundos.
                   </p>
                 </div>
-                <button className="btn" type="button">
-                  Iniciar diagnostico
+                <a className="btn" href={coteFinanceAppUrl} target="_blank" rel="noreferrer">
+                  Iniciar diagnóstico
                   <Icon name="arrow_forward" />
-                </button>
+                </a>
               </article>
             </div>
 
             <section className="cmp-table-section">
               <header>
-                <h2>Visao detalhada</h2>
+                <h2>Visão detalhada</h2>
               </header>
               <div className="cmp-table-wrap">
                 <table>

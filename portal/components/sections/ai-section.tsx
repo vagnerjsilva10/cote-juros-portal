@@ -1,4 +1,6 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
+
+import { coteFinanceAppUrl } from '@/data/homepage';
 
 export function AiSection() {
   return (
@@ -7,27 +9,26 @@ export function AiSection() {
         <div>
           <Image
             src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80"
-            alt="Painel moderno com grafico financeiro e visual de inteligencia artificial"
+            alt="Painel moderno com gráfico financeiro e visual de inteligência artificial"
             width={960}
             height={720}
           />
         </div>
         <div>
-          <h2>Veja sua vida financeira com inteligencia artificial.</h2>
+          <h2>Veja sua vida financeira com inteligência artificial.</h2>
           <p>
-            Nossa IA processa seus dados em segundos, identifica padroes e sugere o proximo
-            movimento antes que os problemas crescam.
+            Nossa IA processa seus dados em segundos, identifica padrões e sugere o próximo
+            movimento antes que os problemas cresçam.
           </p>
           <ul>
-            <li>Predicao de fluxo de caixa para os proximos meses.</li>
-            <li>Chat consultivo para decisoes de compra e credito.</li>
+            <li>Predição de fluxo de caixa para os próximos meses.</li>
+            <li>Chat consultivo para decisões de compra e crédito.</li>
           </ul>
-          <button className="btn btn-dark" type="button">
+          <a className="btn btn-dark" href={coteFinanceAppUrl} target="_blank" rel="noreferrer">
             Criar conta gratuita
-          </button>
+          </a>
         </div>
       </div>
     </section>
   );
 }
-

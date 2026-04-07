@@ -1,9 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+﻿import Image from 'next/image';
+import Link from 'next/link';
 
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { aboutPillars, aboutStats } from "@/data/about-us";
+import { SiteFooter } from '@/components/site-footer';
+import { SiteHeader } from '@/components/site-header';
+import { aboutPillars, aboutStats } from '@/data/about-us';
+import { coteFinanceAppUrl } from '@/data/homepage';
 
 export function SobreNosPage() {
   return (
@@ -13,11 +14,11 @@ export function SobreNosPage() {
         <section className="container about-hero">
           <span className="about-kicker">Quem somos</span>
           <h1>
-            Transparencia, tecnologia e <span>curadoria.</span>
+            Transparência, tecnologia e <span>curadoria.</span>
           </h1>
           <p>
-            Fundada para simplificar o mercado financeiro e devolver previsibilidade para decisoes
-            de credito, investimento e patrimonio.
+            Fundada para simplificar o mercado financeiro e devolver previsibilidade para decisões
+            de crédito, investimento e patrimônio.
           </p>
           <div className="about-hero-gallery">
             <Image
@@ -28,7 +29,7 @@ export function SobreNosPage() {
             />
             <Image
               src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-              alt="Tecnologia e dados em ambiente de analise"
+              alt="Tecnologia e dados em ambiente de análise"
               width={1200}
               height={700}
             />
@@ -45,11 +46,11 @@ export function SobreNosPage() {
 
         <section className="container about-mission">
           <div>
-            <span>Nossa visao</span>
-            <h2>Eliminando as sombras das letras miudas.</h2>
+            <span>Nossa visão</span>
+            <h2>Eliminando as sombras das letras miúdas.</h2>
             <p>
               Nossos dados e modelos transformam burocracia em clareza. Ajudamos pessoas a tomar
-              decisoes com impacto real no custo de vida.
+              decisões com impacto real no custo de vida.
             </p>
           </div>
           <div className="about-mission-images">
@@ -66,10 +67,8 @@ export function SobreNosPage() {
         <section className="about-dark">
           <div className="container">
             <span>Metodologia</span>
-            <h2>O padrao E-E-A-T em financas.</h2>
-            <p>
-              Combinamos rigor tecnico, UX e transparencia para reduzir risco de interpretacao.
-            </p>
+            <h2>O padrão E-E-A-T em finanças.</h2>
+            <p>Combinamos rigor técnico, UX e transparência para reduzir risco de interpretação.</p>
             <div className="about-pillars">
               {aboutPillars.map((pillar) => (
                 <article key={pillar.title}>
@@ -83,28 +82,28 @@ export function SobreNosPage() {
 
         <section className="container about-ai-cta">
           <div>
-            <h2>A inteligencia que conecta seus objetivos.</h2>
+            <h2>A inteligência que conecta seus objetivos.</h2>
             <p>
-              Nossa IA complementa a curadoria com monitoramento continuo e recomendacoes
-              acionaveis.
+              Nossa IA complementa a curadoria com monitoramento contínuo e recomendações
+              acionáveis.
             </p>
             <div>
-              <button className="btn btn-dark" type="button">
+              <a className="btn btn-dark" href={coteFinanceAppUrl} target="_blank" rel="noreferrer">
                 Conhecer IA
-              </button>
-              <button className="btn btn-secondary" type="button">
-                Nossa historia
-              </button>
+              </a>
+              <Link className="btn btn-secondary" href="/sobre-nos">
+                Nossa história
+              </Link>
             </div>
           </div>
         </section>
 
         <section className="container about-quick-links">
-          <p>Pronto para comecar?</p>
+          <p>Pronto para começar?</p>
           <div>
             <Link href="/ferramentas">Hub de ferramentas</Link>
             <Link href="/comparador-interativo">Comparadores</Link>
-            <Link href="/diagnostico-financeiro">Diagnostico</Link>
+            <Link href="/diagnostico-financeiro">Diagnóstico</Link>
           </div>
         </section>
       </main>

@@ -1,22 +1,26 @@
+﻿import Link from 'next/link';
+
+import { coteFinanceAppUrl } from '@/data/homepage';
+
 export function HeroSection() {
   return (
     <section className="hero section-spaced">
       <div className="container hero-grid">
         <div>
           <h1>
-            Pare de tomar decisoes financeiras <span>no escuro.</span>
+            Pare de tomar decisões financeiras <span>no escuro.</span>
           </h1>
           <p>
-            Compare solucoes financeiras, entenda seu dinheiro e descubra o proximo passo mais
-            inteligente para sua vida financeira.
+            Compare soluções financeiras, entenda seu dinheiro e descubra o próximo passo mais
+            inteligente para a sua vida financeira.
           </p>
           <div className="hero-actions">
-            <button className="btn btn-primary" type="button">
-              Fazer diagnostico financeiro
-            </button>
-            <button className="btn btn-secondary" type="button">
+            <Link className="btn btn-primary" href="/diagnostico-financeiro">
+              Fazer diagnóstico financeiro
+            </Link>
+            <a className="btn btn-secondary" href={coteFinanceAppUrl} target="_blank" rel="noreferrer">
               Conhecer o Cote Finance AI
-            </button>
+            </a>
           </div>
         </div>
 
@@ -27,16 +31,16 @@ export function HeroSection() {
               <span />
               <span />
             </div>
-            <small>Analise em tempo real</small>
+            <small>Análise em tempo real</small>
           </div>
           <div className="preview-kpis">
             <article>
-              <p>Patrimonio Liquido</p>
+              <p>Patrimônio líquido</p>
               <strong>R$ 142.500</strong>
-              <small>+12% este mes</small>
+              <small>+12% este mês</small>
             </article>
             <article>
-              <p>Score de Credito</p>
+              <p>Score de crédito</p>
               <strong>842</strong>
               <small>Excelente</small>
             </article>
@@ -49,9 +53,7 @@ export function HeroSection() {
             <span style={{ height: '96%' }} className="active" />
             <span style={{ height: '72%' }} />
           </div>
-          <aside>
-            AI Insight: voce pode economizar R$ 450/mes refinanciando seu cartao.
-          </aside>
+          <aside>Insight IA: você pode economizar R$ 450/mês ao refinanciar seu cartão.</aside>
         </div>
       </div>
     </section>

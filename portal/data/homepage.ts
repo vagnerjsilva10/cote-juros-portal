@@ -1,4 +1,4 @@
-export type NavItem = {
+﻿export type NavItem = {
   label: string;
   href: string;
 };
@@ -34,57 +34,59 @@ export const navItems: NavItem[] = [
   { label: 'Comparadores', href: '/comparador-interativo' },
   { label: 'Ferramentas', href: '/ferramentas' },
   { label: 'Editorial', href: '/editorial-artigo' },
-  { label: 'Cote Finance AI', href: '/cote-finance-ai' }
+  { label: 'Cote Finance AI', href: 'https://finance.cotejuros.com.br?source=portal' }
 ];
+
+export const coteFinanceAppUrl = 'https://finance.cotejuros.com.br?source=portal';
 
 export const pillars: Pillar[] = [
   {
     icon: 'credit_card',
-    title: 'Cartoes de credito',
-    description: 'As melhores opcoes comparadas com base no seu perfil de consumo e beneficios.'
+    title: 'Cartões de crédito',
+    description: 'As melhores opções comparadas com base no seu perfil de consumo e benefícios.'
   },
   {
     icon: 'account_balance',
-    title: 'Emprestimos',
-    description: 'Taxas reais, clareza total e simulacoes sem impacto no score de credito.'
+    title: 'Empréstimos',
+    description: 'Taxas reais, clareza total e simulações sem impacto no score de crédito.'
   },
   {
     icon: 'query_stats',
-    title: 'Organizacao financeira',
+    title: 'Organização financeira',
     description: 'Visualize para onde seu dinheiro vai e tome o controle do planejamento mensal.'
   }
 ];
 
 export const comparatorGroups: ComparatorGroup[] = [
   {
-    title: 'Melhores cartoes',
+    title: 'Melhores cartões',
     cta: 'Ver ranking completo',
     rows: [
-      { badge: 'TOP 1', name: 'Infinite Premium', meta: 'Pontos: 2.5 por dolar', highlight: 'TOP 1' },
+      { badge: 'TOP 1', name: 'Infinite Premium', meta: 'Pontos: 2.5 por dólar', highlight: 'TOP 1' },
       { badge: 'TOP 2', name: 'Platinum Global', meta: 'Cashback: 1.5%', highlight: 'TOP 2' }
     ]
   },
   {
-    title: 'Cartoes sem anuidade',
+    title: 'Cartões sem anuidade',
     cta: 'Ver ranking completo',
     rows: [
       { badge: 'TOP 1', name: 'Digital Zero', meta: 'Anuidade: R$ 0', highlight: 'TOP 1' },
-      { badge: 'TOP 2', name: 'Green Lite', meta: 'Beneficios sustentaveis', highlight: 'TOP 2' }
+      { badge: 'TOP 2', name: 'Green Lite', meta: 'Benefícios sustentáveis', highlight: 'TOP 2' }
     ]
   },
   {
-    title: 'Melhores emprestimos',
+    title: 'Melhores empréstimos',
     cta: 'Ver todas as taxas',
     rows: [
       { badge: '1.1%', name: 'Home Equity X', meta: 'Taxas a partir de 0.8% a.m.', highlight: '1.1%' },
-      { badge: '2.4%', name: 'Pessoal Digital', meta: 'Liberacao em 24h', highlight: '2.4%' }
+      { badge: '2.4%', name: 'Pessoal Digital', meta: 'Liberação em 24h', highlight: '2.4%' }
     ]
   }
 ];
 
 export const editorialPosts: EditorialPost[] = [
   {
-    category: 'Estrategia',
+    category: 'Estratégia',
     title: 'Como o refinanciamento pode se tornar sua alavanca em 2026',
     author: 'Marcos Valente',
     readTime: '8 min de leitura',
@@ -92,8 +94,8 @@ export const editorialPosts: EditorialPost[] = [
       'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80'
   },
   {
-    category: 'Inovacao',
-    title: 'O impacto da IA generativa na gestao do patrimonio pessoal',
+    category: 'Inovação',
+    title: 'O impacto da IA generativa na gestão do patrimônio pessoal',
     author: 'Ana Paula Costa',
     readTime: '5 min de leitura',
     image:
@@ -101,7 +103,7 @@ export const editorialPosts: EditorialPost[] = [
   },
   {
     category: 'Mercado',
-    title: 'Selic e credito: guia pratico para o investidor moderado',
+    title: 'Selic e crédito: guia prático para o investidor moderado',
     author: 'Equipe Editorial',
     readTime: '12 min de leitura',
     image:
